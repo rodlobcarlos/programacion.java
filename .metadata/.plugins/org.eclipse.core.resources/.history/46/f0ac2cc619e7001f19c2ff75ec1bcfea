@@ -1,9 +1,0 @@
-package boletin_3;
-
-public class bancoMain {
-
-	public static void main(String[] args) {
-		
-	}
-
-}
