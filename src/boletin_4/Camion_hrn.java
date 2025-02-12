@@ -46,4 +46,12 @@ public class Camion_hrn extends Vehiculo_hrn{
 	public void setNumEjes(int numEjes) {
 		this.numEjes = numEjes;
 	}
+	
+	boolean tieneLimitacion() {
+		return true;
+	}
+	
+	String[] getLicencias() {
+		return;
+	}
 }

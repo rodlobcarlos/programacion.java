@@ -20,4 +20,16 @@ public class Automovil_hrn extends Vehiculo_hrn {
 	public void setCalificacionEcologica(String calificacionEcologica) {
 		this.calificacionEcologica = calificacionEcologica;
 	}
+
+	boolean tieneLimitacionParaCircular(String ciudad) {
+		boolean cierto = false;
+		if (ciudad == "Madrid" || ciudad == "Barcelona" && calificacionEcologica == "B" || calificacionEcologica == "C") {
+			cierto = true;
+		}else if (ciudad == "Valencia" || ciudad == "Barcelona" && calificacionEcologica == "C") {
+			cierto = true;
+		}else {
+			cierto = false;
+		}
+		return cierto;
+	}
 }
