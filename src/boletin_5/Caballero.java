@@ -13,7 +13,7 @@ public class Caballero extends Personaje {
 
 	@Override
 	public String toString() {
-		return "Caballero [nivel=" + nivel + ", HP=" + HP + ", getNombre()=" + getNombre() + ", getArma()=" + getArma()
+		return "Caballero [nivel=" + nivel + ", HP=" + HP + ", nombre=" + getNombre() + ", arma=" + getArma()
 				+ "]";
 	}
 	
@@ -34,13 +34,19 @@ public class Caballero extends Personaje {
 	}
 
 
-	boolean esAtacado(Personaje mago) {
+	boolean esAtacado(Personaje personaje) {
+		boolean puedeAtacar;
+		if (personaje instanceof Mago) {
+			puedeAtacar = true;
+		}else {
+			puedeAtacar = false;
+		}
 		return true;
 	}
 	
-	boolean esAtacado(Personaje arquero, int distancia) {
+	boolean esAtacado(Personaje personaje, int distancia) {
 		boolean puedeAtacar;
-		if (distancia > 100) {
+		if (personaje instanceof Arquero && distancia > 100) {
 			puedeAtacar = true;
 		}else {
 			puedeAtacar = false;

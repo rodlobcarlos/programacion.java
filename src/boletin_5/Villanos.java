@@ -13,7 +13,7 @@ public class Villanos extends Personaje{
 
 	@Override
 	public String toString() {
-		return "Villanos [nivel=" + nivel + ", HP=" + HP + ", getNombre()=" + getNombre() + ", getArma()=" + getArma()
+		return "Villanos [nivel=" + nivel + ", HP=" + HP + ", nombre=" + getNombre() + ", arma=" + getArma()
 				+ "]";
 	}
 	

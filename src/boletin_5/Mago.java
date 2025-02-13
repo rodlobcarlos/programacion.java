@@ -6,7 +6,7 @@ public class Mago extends Personaje{
 
 	@Override
 	public String toString() {
-		return "Mago [nivel=" + nivel + ", HP=" + HP + ", getNombre()=" + getNombre() + ", getArma()=" + getArma()
+		return "Mago [nivel=" + nivel + ", HP=" + HP + ", nombre=" + getNombre() + ", arma=" + getArma()
 				+ "]";
 	}
 
