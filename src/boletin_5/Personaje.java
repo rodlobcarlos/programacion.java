@@ -46,5 +46,8 @@ public class Personaje {
 		this.arma = arma;
 	}
 	
+	boolean esAtacado(Personaje p) {
+		return true;
+	}
 	
 }

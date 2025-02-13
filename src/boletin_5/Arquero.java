@@ -12,7 +12,7 @@ public class Arquero extends Personaje{
 
 	@Override
 	public String toString() {
-		return "Arquero [nivel=" + nivel + ", HP=" + HP + ", getNombre()=" + getNombre() + ", getArma()=" + getArma()
+		return "Arquero [nivel=" + nivel + ", HP=" + HP + ",nombre =" + getNombre() + ", getArma()=" + getArma()
 				+ "]";
 	}
 
