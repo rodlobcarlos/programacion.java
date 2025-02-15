@@ -51,7 +51,7 @@ public class Camion_hrn extends Vehiculo_hrn{
 		return true;
 	}
 	
-	String[] getLicencias() {
+	String getLicencias() {
 		return;
 	}
 }
