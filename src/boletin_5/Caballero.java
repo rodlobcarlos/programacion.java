@@ -40,7 +40,7 @@ public class Caballero extends Personaje {
 	
 	boolean esAtacado(Personaje arquero, int distancia) {
 		boolean puedeAtacar;
-		if (distancia > 100) {
+		if (distancia > 100 && arquero instanceof Personaje) {
 			puedeAtacar = true;
 		}else {
 			puedeAtacar = false;
