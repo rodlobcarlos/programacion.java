@@ -17,7 +17,7 @@ public class AsignaturaMain {
 		
 		vicente.notaProgramacion.notaMedia();
 		vicente.notaBaseDeDatos.notaMedia();
-
+		
 		vicente.imprimeSiHaAprobado();
 		
 		lucia.imprimeSiHaAprobado();
