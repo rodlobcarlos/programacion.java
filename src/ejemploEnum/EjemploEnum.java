@@ -10,7 +10,8 @@ enum Color{
 		Color color = Color.azul;
 		System.out.println("El color es: " + color);
 		
-		for (Color c : color.values()) {
+		for (Color c : Color.values()) {
+			if (c == Color.amarillo)
 			System.out.println("Color: " + c);
 		}
 	}
