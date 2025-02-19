@@ -59,5 +59,9 @@ public class Planetas extends Astros {
 		this.tieneSatelites = tieneSatelites;
 	}
 	
-	
+	void muestraInformacion(Object objeto) {
+		System.out.println("Distancia al sol: " + distanciaSol);
+		System.out.println("Orbita al sol: " + orbitaSol);
+		System.out.println("Tiene satelites: " + tieneSatelites);
+	}
 }

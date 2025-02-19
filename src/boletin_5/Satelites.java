@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Satelites extends Astros{
 	private double distanciaPlaneta;
 	private int orbitaPlanetaria;
-	private String planetaPerteneciente;
+	private Planetas planeta;
 	
 	protected double getDistanciaPlaneta() {
 		return distanciaPlaneta;
@@ -19,17 +19,17 @@ public class Satelites extends Astros{
 	protected void setOrbitaPlanetaria(int orbitaPlanetaria) {
 		this.orbitaPlanetaria = orbitaPlanetaria;
 	}
-	protected String getPlanetaPerteneciente() {
-		return planetaPerteneciente;
+	protected Planetas getPlaneta() {
+		return planeta;
 	}
-	protected void setPlanetaPerteneciente(String planetaPerteneciente) {
-		this.planetaPerteneciente = planetaPerteneciente;
+	protected void setPlaneta(Planetas planeta) {
+		this.planeta = planeta;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + Objects.hash(distanciaPlaneta, orbitaPlanetaria, planetaPerteneciente);
+		result = prime * result + Objects.hash(distanciaPlaneta, orbitaPlanetaria, planeta);
 		return result;
 	}
 	@Override
@@ -42,15 +42,24 @@ public class Satelites extends Astros{
 			return false;
 		Satelites other = (Satelites) obj;
 		return Double.doubleToLongBits(distanciaPlaneta) == Double.doubleToLongBits(other.distanciaPlaneta)
-				&& orbitaPlanetaria == other.orbitaPlanetaria
-				&& Objects.equals(planetaPerteneciente, other.planetaPerteneciente);
+				&& orbitaPlanetaria == other.orbitaPlanetaria && Objects.equals(planeta, other.planeta);
 	}
 	@Override
 	public String toString() {
 		return "Satelites [distanciaPlaneta=" + distanciaPlaneta + ", orbitaPlanetaria=" + orbitaPlanetaria
-				+ ", planetaPerteneciente=" + planetaPerteneciente + ", distanciaPlanteta=" + getDistanciaPlaneta()
-				+ ", nombrePlaneta=" + getPlanetaPerteneciente() + "]";
+				+ ", planeta=" + planeta + "]";
+	}
+	public Satelites(double radioEcuatorial, int rotacionSobreEje, int masa, int tempMedia, int gravedad, String nombre,
+			double distanciaPlaneta, int orbitaPlanetaria, Planetas planeta) {
+		super(radioEcuatorial, rotacionSobreEje, masa, tempMedia, gravedad, nombre);
+		this.distanciaPlaneta = distanciaPlaneta;
+		this.orbitaPlanetaria = orbitaPlanetaria;
+		this.planeta = planeta;
 	}
 	
-	
+	void muestraInformacion(Object objeto) {
+		System.out.println("Distancia al planeta: " + distanciaPlaneta);
+		System.out.println("Orbita planetaria: " + orbitaPlanetaria);
+		System.out.println("Planeta al que pertenece: " + planeta);
+	}
 }	

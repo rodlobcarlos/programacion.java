@@ -70,9 +70,8 @@ public class Astros {
 		if (getClass() != obj.getClass())
 			return false;
 		Astros astro = (Astros) obj;
-		return gravedad == astro.gravedad && masa == astro.masa && Objects.equals(nombre, astro.nombre)
-				&& Double.doubleToLongBits(radioEcuatorial) == Double.doubleToLongBits(astro.radioEcuatorial)
-				&& rotacionSobreEje == astro.rotacionSobreEje && tempMedia == astro.tempMedia;
+		return masa == astro.masa && Objects.equals(nombre, astro.nombre)
+				&& Double.doubleToLongBits(radioEcuatorial) == Double.doubleToLongBits(astro.radioEcuatorial);
 	}
 	
 	@Override
@@ -80,12 +79,12 @@ public class Astros {
 		return "Astros [radioEcuatorial=" + radioEcuatorial + ", masa=" + masa + ", nombre=" + nombre + "]";
 	}
 	
-	void muestraInformacion(String objeto) {
+	void muestraInformacion(Object objeto) {
 		System.out.println("Nombre: " + nombre);
 		System.out.println("Masa: " + masa);
 		System.out.println("Diametro: " + radioEcuatorial);
-		System.out.println("Nombre: " + nombre);
-		System.out.println("Nombre: " + nombre);
-		System.out.println("Nombre: " + nombre);
+		System.out.println("rotacion sobre el eje: " + rotacionSobreEje);
+		System.out.println("Temperetura media: " + tempMedia);
+		System.out.println("Gravedad: " + gravedad);
 	}
 }
