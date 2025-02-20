@@ -6,13 +6,13 @@ public class Equipo {
 	private String direccionMac;
 	private String sistemaOp;
 	private int numIncidentes;
-	private String nombre;
+	private String nombreEquipo;
 	
 	protected String getNombre() {
-		return nombre;
+		return nombreEquipo;
 	}
 	protected void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombreEquipo = nombre;
 	}
 	protected String getDireccionMac() {
 		return direccionMac;
@@ -35,7 +35,7 @@ public class Equipo {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(direccionMac, nombre, numIncidentes, sistemaOp);
+		return Objects.hash(direccionMac, nombreEquipo, numIncidentes, sistemaOp);
 	}
 	
 	@Override
@@ -52,7 +52,7 @@ public class Equipo {
 	
 	@Override
 	public String toString() {
-		return "Equipo [nombre=" + nombre + "direccionMac=" + direccionMac + ", sistemaOp=" + sistemaOp + "numIncidentes="
+		return "Equipo [nombre=" + nombreEquipo + "direccionMac=" + direccionMac + ", sistemaOp=" + sistemaOp + "numIncidentes="
 		+ "numIncidentes]";
 	}
 	
@@ -61,6 +61,6 @@ public class Equipo {
 		this.direccionMac = direccionMac;
 		this.sistemaOp = sistemaOp;
 		this.numIncidentes = numIncidentes;
-		this.nombre = nombre;
+		this.nombreEquipo = nombre;
 	}
 }

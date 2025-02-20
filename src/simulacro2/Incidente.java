@@ -105,10 +105,11 @@ public class Incidente {
 				&& Objects.equals(identificadorNum, other.identificadorNum) && Objects.equals(nombre, other.nombre);
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Incidente [identificadorNum=" + identificadorNum + ", nombre=" + nombre + ", descripcion=" + descripcion
-				+ ", fechaRegistro=" + fechaRegistro + ", fechaCierre=" + fechaCierre + ", estado=" + estado
+		return "Incidente [nombre=" + nombre + ", fechaRegistro=" + fechaRegistro + ", estado=" + estado
 				+ ", criticidad=" + criticidad + ", equipoIncidente=" + equipoIncidente + "]";
 	}
 
@@ -123,5 +124,17 @@ public class Incidente {
 		this.setEstado(estado);
 		this.criticidad = criticidad;
 		this.equipoIncidente = equipoIncidente;
+	}
+	LocalDate hoy = LocalDate.now();
+		boolean urgente = false;
+	boolean esUrgente() {
+		if(criticidad.equals(Criticidad.CRITICA)) {
+			urgente = true;
+		}else if (criticidad.equals(Criticidad.GRAVE) && this.fechaRegistro.plusDays(7).isAfter(hoy)) {
+			urgente = true;
+		}else if (criticidad.equals(Criticidad.MEDIA) && this.fechaRegistro.plusDays(30).isAfter(hoy)){
+			urgente = true;
+		}
+		return urgente;
 	}
 }
