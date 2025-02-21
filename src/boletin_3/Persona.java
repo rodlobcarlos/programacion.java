@@ -12,7 +12,9 @@ public class Persona {
 		return dni;
 	}
 	public void setDni(String dni) {
-		this.dni = dni;
+		if ( dni.matches("\\d{8}")) {
+			this.dni = dni;
+		}
 	}
 	public String getNombre() {
 		return nombre;
