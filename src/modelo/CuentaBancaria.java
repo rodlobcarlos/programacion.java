@@ -11,6 +11,13 @@ public class CuentaBancaria {
 	private Cliente clienteTitular;
 	private Cliente ClienteAutorizado;
 	
+	public static int getContador() {
+		return contador;
+	}
+	public static void setContador(int contador) {
+		CuentaBancaria.contador = contador;
+	}
+	
 	@Override
 	public String toString() {
 		return "CuentaBancaria [saldo=" + saldo + ", fechaApertura=" + fechaApertura

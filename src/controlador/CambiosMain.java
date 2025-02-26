@@ -7,10 +7,10 @@ public class CambiosMain {
 
 	public static void main(String[] args) {
 		Conversor conv = new Conversor(100);
-		conv.euros_a_dolares(conv);
+		System.out.println(conv.calcula_euros_a_dolares(conv));
 		
 		ConversorInverso conv2 = new ConversorInverso(100);
-		conv2.dolares_a_euros(conv2);
+		System.out.println(conv2.calcula_dolares_a_euros(conv2));
 		
 	}
 

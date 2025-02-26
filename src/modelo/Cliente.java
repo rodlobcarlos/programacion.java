@@ -16,6 +16,4 @@ public class Cliente {
 		this.apellidos = apellidos;
 		DNI = dNI;
 	}
-	
-	
 }

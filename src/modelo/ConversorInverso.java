@@ -2,7 +2,7 @@ package modelo;
 
 public class ConversorInverso {
 	private float dolares;
-	public final static float euros = 0.96f;
+	public final static float EUROS = 1.05f;
 	
 	@Override
 	public String toString() {
@@ -14,12 +14,14 @@ public class ConversorInverso {
 		this.dolares = dolares;
 	}
 	
-	public static void dolares_a_euros(ConversorInverso d) {
+	public static float calcula_dolares_a_euros(ConversorInverso d) {
+		float conversion;
 		if(d.dolares > 0) {
-			double conversion = d.dolares * euros;
-			System.out.println(conversion);
+			conversion = d.dolares * EUROS;
 		}else {
+			conversion = 0;
 			System.out.println("Cantidad no valida");
 		}
+		return conversion;
 	}
 }
