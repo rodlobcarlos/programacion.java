@@ -4,18 +4,24 @@ public class Canario extends Aves{
 	private String color;
 	private String canta;
 	
-	void muestra() {
+	public Canario(String color, String canta) {
+		super();
+		this.color = color;
+		this.canta = canta;
+	}
+	
+	@Override
+	public void muestra(Aves a) {
 		System.out.println("Color: " + color);
-		System.out.println("Canta: " + canta);
+		System.out.println("Canta: " + canta);		
 	}
 	
 	boolean habla() {
-		boolean habla = false;
-		return habla;
+		return false;
 	}
-	
+
+	@Override
 	public boolean volar() {
-		 boolean vuela = true;
-		return vuela;
+		return false;
 	}
 }

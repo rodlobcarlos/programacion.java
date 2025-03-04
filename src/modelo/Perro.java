@@ -4,21 +4,20 @@ public class Perro extends Mascota{
 	private String raza;
 	private String pulgas;
 	
-	void muestra() {
-		System.out.println("Raza: " + raza);
-		System.out.println("Pulgas: " + pulgas);
+	public Perro(String raza, String pulgas) {
+		super();
+		this.raza = raza;
+		this.pulgas = pulgas;
 	}
-	
+
+	@Override
 	public boolean habla() {
-		boolean hablar = false;
-		return hablar;
+		return false;
 	}
 
 	@Override
 	public void muestra(Mascota m) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Raza: " + raza);
+		System.out.println("Pulgas: " + pulgas);		
 	}
-
-	
 }

@@ -4,19 +4,25 @@ public class Loro extends Aves {
 	private String origen;
 	private String habla;
 	
-	void muestra() {
+	public Loro(String origen, String habla) {
+		super();
+		this.origen = origen;
+		this.habla = habla;
+	}
+
+	@Override
+	public void muestra(Aves a) {
 		System.out.println("Origen: " + origen);
-		System.out.println("Habla: " + habla);
+		System.out.println("Habla: " + habla);		
 	}
 	
+	@Override
 	public boolean volar() {
-		boolean vuela = true;
-		return vuela;	
+		return true;
 	}
 	
 	public boolean habla() {
-		boolean hablar = false;
-		return hablar;
+		return false;
 		
 	}
 }
