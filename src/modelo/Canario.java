@@ -10,7 +10,6 @@ public class Canario extends Aves{
 		this.canta = canta;
 	}
 	
-	@Override
 	public void muestra(Aves a) {
 		System.out.println("Color: " + color);
 		System.out.println("Canta: " + canta);		

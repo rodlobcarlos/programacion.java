@@ -10,20 +10,25 @@ import modelo.Perro;
 public class TiendaDeAnimalesMain {
 
     public static void main(String[] args) {
-    	Mascota perro = new Perro("Huscky", "No tiene pulgas");
+    	int contadorAnimal = 0;
+    	
+    	Mascota perro = new Perro("Raza1", "No tiene pulgas");
     	perro.muestra(perro);
+    	
     	Mascota gato = new Gato("Gris claro", "Tiene pelo largo");
     	gato.muestra(gato);
+    	
     	TiendaDeAnimalesMain animal = new TiendaDeAnimalesMain();
-    	Mascota[] Listamascotas = animal.mascotas;
-    	System.out.println(Listamascotas);
-    }
-
-    private Mascota[] mascotas;
-
-    @Override
-    public String toString() {
-        return "TiendaDeAnimales [mascotas=" + Arrays.toString(mascotas) + "]";
+    	System.out.println(perro.equals(perro));
+    	
+    	Gato gato1 = new Gato("Marron claro", "No tiene pelo largo");
+    	gato.equals(gato1);
+    	
+    	 Mascota[] animales = new Mascota[10];
+    	 animales[contadorAnimal] = gato;
+    	 contadorAnimal +=1;
+    	 
+    	 System.out.println(Arrays.toString(animales));
     }
 
     void lista_animales(Mascota m, Mascota n, Mascota p, Mascota n_E, Aves n_A) {

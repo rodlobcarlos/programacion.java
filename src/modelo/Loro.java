@@ -10,7 +10,6 @@ public class Loro extends Aves {
 		this.habla = habla;
 	}
 
-	@Override
 	public void muestra(Aves a) {
 		System.out.println("Origen: " + origen);
 		System.out.println("Habla: " + habla);		

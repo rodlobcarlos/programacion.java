@@ -80,6 +80,7 @@ public abstract class Mascota {
 
 	@Override
 	public boolean equals(Object obj) {
+		System.out.println(this.getClass().getName());
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -99,8 +100,10 @@ public abstract class Mascota {
 		
 	}
 	
-	boolean morir() {
+	/*boolean morir() {
 		boolean estaVivo = false;
+		if() {
+		}
 		return estaVivo;
-	}
+	}*/
 }
