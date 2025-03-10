@@ -2,6 +2,12 @@ package modelo;
 
 public class Depredadores extends Animales{
 
+	public Depredadores(String nombreEspecie, TipoAnimal tipo, String lugarDondeHabita, Animales[] animalesQueCome,
+			Animales[] animalesComido) {
+		super(nombreEspecie, tipo, lugarDondeHabita, animalesQueCome, animalesComido);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	boolean atacar(Animales a) {
 		boolean ataca = false;
@@ -14,6 +20,8 @@ public class Depredadores extends Animales{
 		}else if(a.equals(TipoAnimal.ROEDOR)) {
 			System.out.println("Solo se alimenta de plantas");
 			ataca = true;
+		}else if(a.getTipo().equals(TipoAnimal.values())) {
+			System.out.println("No puede atacar a su misma especie");
 		}else {
 			System.out.println("El leon se alimenta de todos los animales");
 			ataca = true;

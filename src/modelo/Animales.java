@@ -71,6 +71,16 @@ public abstract class Animales {
 		this.animalesComido = animalesComido;
 	}
 	
+	public Animales(String nombreEspecie, TipoAnimal tipo, String lugarDondeHabita, Animales[] animalesQueCome,
+			Animales[] animalesComido) {
+		super();
+		this.nombreEspecie = nombreEspecie;
+		this.tipo = tipo;
+		this.lugarDondeHabita = lugarDondeHabita;
+		this.animalesQueCome = animalesQueCome;
+		this.animalesComido = animalesComido;
+	}
+	
 	abstract boolean atacar(Animales a);
 	abstract boolean huir(Animales a);
 }
