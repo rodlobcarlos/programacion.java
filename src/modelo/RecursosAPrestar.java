@@ -1,8 +1,6 @@
 package modelo;
 
-import java.util.Objects;
-
-public abstract class RecursosAPrestar{
+public abstract class RecursosAPrestar implements IPrestable{
 	private int id;
 	private String ubicacion;
 	
@@ -20,23 +18,6 @@ public abstract class RecursosAPrestar{
 	}
 	
 	@Override
-	public int hashCode() {
-		return Objects.hash(id, ubicacion);
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		RecursosAPrestar other = (RecursosAPrestar) obj;
-		return id == other.id && Objects.equals(ubicacion, other.ubicacion);
-	}
-	
-	@Override
 	public String toString() {
 		return "RecursosAPrestar [id=" + id + ", ubicacion=" + ubicacion + "]";
 	}
@@ -46,6 +27,4 @@ public abstract class RecursosAPrestar{
 		this.id = id;
 		this.ubicacion = ubicacion;
 	}
-	
-	
 }

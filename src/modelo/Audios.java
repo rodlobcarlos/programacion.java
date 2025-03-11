@@ -1,64 +1,33 @@
 package modelo;
 
-import java.util.Objects;
-
 public class Audios extends ElementosMultimedia{
-	private String nombre;
-	private String genero;
+	private int minutos;
 
-	public String getNombre() {
-		return nombre;
-	}
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public int getMinutos() {
+		return minutos;
 	}
 
-	public String getGenero() {
-		return genero;
-	}
-
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setMinutos(int minutos) {
+		this.minutos = minutos;
 	}
 
 	@Override
 	public String toString() {
-		return "Audios [nombre=" + nombre + ", genero=" + genero + "]";
+		return "Audios [minutos=" + minutos + "]";
 	}
 
-	public Audios(int id, String ubicacion, String nombre, String genero) {
+	public Audios(int id, String ubicacion, int minutos) {
 		super(id, ubicacion);
-		this.nombre = nombre;
-		this.genero = genero;
-	}
-
-	public Audios(int id, String ubicacion) {
-		super(id, ubicacion);
-		// TODO Auto-generated constructor stub
+		this.minutos = minutos;
 	}
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + Objects.hash(genero, nombre);
-		return result;
+	public boolean estaDiponible() {
+		return false;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Audios other = (Audios) obj;
-		return Objects.equals(genero, other.genero) && Objects.equals(nombre, other.nombre);
-	}
-	
-	int duracionMinutos() {
-		return 0;
+	public int getDevuelveDiasPrestamo() {
+		return 10;
 	}
 }
