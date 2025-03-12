@@ -3,6 +3,15 @@ package modelo;
 public abstract class ElementosMultimedia extends RecursosAPrestar {
 	private String nombre;
 	private String genero;
+	private int diasPrestamo;
+
+	public int getDiasPrestamo() {
+		return diasPrestamo;
+	}
+
+	public void setDiasPrestamo(int diasPrestamo) {
+		this.diasPrestamo = diasPrestamo;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -34,5 +43,12 @@ public abstract class ElementosMultimedia extends RecursosAPrestar {
 		super(id, ubicacion);
 		this.nombre = nombre;
 		this.genero = genero;
+		this.diasPrestamo = 10;
 	}
+
+	@Override
+	public int getDevuelveDiasPrestamo() {
+		return diasPrestamo;
+	}
+	
 }

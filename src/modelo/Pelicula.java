@@ -1,6 +1,6 @@
 package modelo;
 
-public class Audios extends ElementosMultimedia{
+public class Pelicula extends ElementosMultimedia {
 	private int minutos;
 
 	public int getMinutos() {
@@ -13,10 +13,10 @@ public class Audios extends ElementosMultimedia{
 
 	@Override
 	public String toString() {
-		return "Audios [minutos=" + minutos + "]";
+		return "Pelicula [minutos=" + minutos + ", getNombre()=" + getNombre() + ", getGenero()=" + getGenero() + "]";
 	}
 
-	public Audios(int id, String ubicacion, int minutos) {
+	public Pelicula(int id, String ubicacion, int minutos) {
 		super(id, ubicacion);
 		this.minutos = minutos;
 	}
@@ -25,4 +25,6 @@ public class Audios extends ElementosMultimedia{
 	public boolean estaDiponible() {
 		return false;
 	}
+	
+	
 }

@@ -1,9 +1,9 @@
 package modelo;
 
-public class Juegos extends ElementosMultimedia{
+public class Juego extends ElementosMultimedia{
 	private int fases;
 
-	public Juegos(int id, String ubicacion, int fases) {
+	public Juego(int id, String ubicacion, int fases) {
 		super(id, ubicacion);
 		this.fases = fases;
 	}
@@ -24,10 +24,5 @@ public class Juegos extends ElementosMultimedia{
 	@Override
 	public boolean estaDiponible() {
 		return false;
-	}
-
-	@Override
-	public int getDevuelveDiasPrestamo() {
-		return 10;
 	}
 }

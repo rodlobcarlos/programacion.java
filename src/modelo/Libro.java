@@ -1,6 +1,6 @@
 package modelo;
 
-public class Libros extends RecursosAPrestar{
+public class Libro extends RecursosAPrestar{
 	private String autor;
 	private String editorial;
 	private String generoLiterario;
@@ -11,7 +11,7 @@ public class Libros extends RecursosAPrestar{
 				+ "]";
 	}
 
-	public Libros(int id, String ubicacion, String autor, String editorial, String generoLiterario) {
+	public Libro(int id, String ubicacion, String autor, String editorial, String generoLiterario) {
 		super(id, ubicacion);
 		this.autor = autor;
 		this.editorial = editorial;
