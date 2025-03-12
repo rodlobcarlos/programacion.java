@@ -40,3 +40,14 @@
 /Libros.class
 /Peliculas.class
 /RecursosAPrestar.class
+/Artista.class
+/Empleado.class
+/Estudiante.class
+/EstudianteEmpleado.class
+/IAccion.class
+/Juego.class
+/Libro.class
+/Pelicula.class
+/Persona1.class
+/PersonaMain.class
+/PersonaRefactoriza.class
