@@ -126,6 +126,11 @@ public abstract class Producto {
 		private String marca;
 		private TipoDet tipo;
 		private TipoRopa ropa;
+		private double descuento;
+		
+		public void setDescuento(double descuento) {
+			this.descuento = descuento;
+		}
 
 		public String getMarca() {
 			return marca;
@@ -152,21 +157,20 @@ public abstract class Producto {
 		}
 
 		@Override
-		public void setDecuento(double des) {
-			// TODO Auto-generated method stub
-
+		public void setDecuento(double descuento) {
+			this.descuento = descuento;
 		}
 
 		@Override
 		public double getDescuento() {
 			// TODO Auto-generated method stub
-			return 0;
+			return this.descuento;
 		}
 
 		@Override
 		public double getPrecioDescuento() {
 			// TODO Auto-generated method stub
-			return 0;
+			return this.getPrecio_venta() - this.descuento * this.getPrecio_venta();
 		}
 
 		@Override
@@ -178,7 +182,7 @@ public abstract class Producto {
 		@Override
 		public double getVolumen() {
 			// TODO Auto-generated method stub
-			return 0;
+			return this.getVolumen();
 		}
 
 		@Override
@@ -210,11 +214,13 @@ public abstract class Producto {
 			return "Detergente [marca=" + marca + ", tipo=" + tipo + ", ropa=" + ropa + ", getIVA()=" + getIVA() + "]";
 		}
 
-		public Detergente(String marca, TipoDet tipo, TipoRopa ropa) {
-			super(id, marca, marca, IVA, IVA, IVA, IVA);
+		public Detergente(int id, String nombre, String descripcion, float peso, float precio_venta,
+				float precio_compra, float iVA, String marca, TipoDet tipo, TipoRopa ropa) {
+			super(id, nombre, descripcion, peso, precio_venta, precio_compra, iVA);
 			this.marca = marca;
 			this.tipo = tipo;
 			this.ropa = ropa;
+			iVA = precio_venta * 21 / 100;
 		}
 	}
 
@@ -233,7 +239,7 @@ public abstract class Producto {
 		private String origen;
 		private float peso;
 		private LocalDate duracion;
-		private String tipo;
+		private TipoPescado tipo;
 
 		public String getOrigen() {
 			return origen;
@@ -259,11 +265,11 @@ public abstract class Producto {
 			this.duracion = duracion;
 		}
 
-		public String getTipo() {
+		public TipoPescado getTipo() {
 			return tipo;
 		}
 
-		public void setTipo(String tipo) {
+		public void setTipo(TipoPescado tipo) {
 			this.tipo = tipo;
 		}
 
@@ -298,12 +304,12 @@ public abstract class Producto {
 		}
 		
 		float calculo;
-		float calcularCalorias(String p) {
-			if (p.equals("azul")) {
+		float calcularCalorias() {
+			if (tipo.equals(TipoPescado.AZUL)) {
 				calculo = peso * 3;
-			} else if (p.equals("blanco")) {
+			} else if (tipo.equals(TipoPescado.BLANCO)) {
 				calculo = peso * 2;
-			} else if(p.equals("marisco")) {
+			} else if(tipo.equals(TipoPescado.MARISCO)) {
 				calculo = peso * 1;
 			}
 			return calculo;
@@ -315,14 +321,21 @@ public abstract class Producto {
 					+ ", calculo=" + calculo + ", getCalorias()=" + getCalorias() + ", getIVA()=" + getIVA() + "]";
 		}
 
-		public Pescado(String origen, float peso, LocalDate duracion, String tipo, float calculo) {
-			super(id, tipo, tipo, calculo, calculo, calculo, calculo);
+		public Pescado(int id, String nombre, String descripcion, float peso, float precio_venta, float precio_compra,
+				float iVA, String origen, float peso2, LocalDate duracion, TipoPescado tipo, float calculo) {
+			super(id, nombre, descripcion, peso, precio_venta, precio_compra, iVA);
 			this.origen = origen;
-			this.peso = peso;
+			peso = peso2;
 			this.duracion = duracion;
 			this.tipo = tipo;
 			this.calculo = calculo;
+			iVA = precio_venta * 7 / 100;
 		}
+	}
+	
+	// Clase enum TipoPescado
+	public enum TipoPescado {
+		BLANCO, AZUL, MARISCO
 	}
 
 	// Clase Vino
@@ -447,8 +460,9 @@ public abstract class Producto {
 					+ ", getCalorias()=" + getCalorias() + "]";
 		}
 
-		public Vino(String marca, TipoVino tipo, float gradoAlcohol, float precio) {
-			super(id, marca, marca, precio, precio, precio, precio);
+		public Vino(int id, String nombre, String descripcion, float peso, float precio_venta, float precio_compra,
+				float iVA, String marca, TipoVino tipo, float gradoAlcohol, float precio) {
+			super(id, nombre, descripcion, peso, precio_venta, precio_compra, iVA);
 			this.marca = marca;
 			this.tipo = tipo;
 			this.gradoAlcohol = gradoAlcohol;

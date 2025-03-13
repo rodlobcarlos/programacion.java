@@ -15,6 +15,8 @@
 /miniSimulacion/
 /modelo/
 /orientacionObjetos/
+/productosMain_controlador/
+/productosSupermercado_modelo/
 /pruebaSorpresa/
 /pruebaSorpresaDario/
 /repaso/
@@ -25,3 +27,4 @@
 /simulacro2/
 /simulacro_1/
 /simulacro_2/
+/excepciones/
