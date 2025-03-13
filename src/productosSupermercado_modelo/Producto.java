@@ -474,4 +474,6 @@ public abstract class Producto {
 	public enum TipoVino {
 		BLANCO, TINTO, ROSADO
 	}
+	
+	
 }
