@@ -2,6 +2,8 @@ package nominas_y_empresa_modelo;
 
 import java.util.Objects;
 
+import modelo.Empleado;
+
 // Clase empleado
 public abstract class AEmpleado {
 	private String nombre;
@@ -61,7 +63,7 @@ public abstract class AEmpleado {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Apellidos, id, nombre, salario, tieneReduccionHoraria);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -73,9 +75,7 @@ public abstract class AEmpleado {
 		if (getClass() != obj.getClass())
 			return false;
 		AEmpleado other = (AEmpleado) obj;
-		return Objects.equals(Apellidos, other.Apellidos) && id == other.id && Objects.equals(nombre, other.nombre)
-				&& Float.floatToIntBits(salario) == Float.floatToIntBits(other.salario)
-				&& tieneReduccionHoraria == other.tieneReduccionHoraria;
+		return id == other.id;
 	}
 
 	@Override
@@ -151,19 +151,22 @@ public abstract class AEmpleado {
 
 		@Override
 		public String devuleveFunciones() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public void imprimeHorario() {
-			// TODO Auto-generated method stub
+			return "Codificar, deseñar planes de pruebas y ejecutarlo";
 		}
 
 		@Override
 		public float calculaImporteNomina() {
 			// TODO Auto-generated method stub
 			return 0;
+		}
+
+		@Override
+		public void imprimeHorario() {
+			if(isTieneReduccionHoraria()) {
+				System.out.println("Horario: 8:00 -> 14:00 y 16:00 -> 20:00");
+			}else {
+				System.out.println("Horario: 8:00 -> 16:00 y 16:00 -> 00:00");
+			}
 		}
 	}
 	
@@ -185,19 +188,26 @@ public abstract class AEmpleado {
 
 		@Override
 		public String devuleveFunciones() {
-			// TODO Auto-generated method stub
-			return null;
+			return "Planificar, asegurar la calidad y la entrega de plazos,"
+					+ "reporting y elaboración de ofertas";
 		}
 
 		@Override
 		public void imprimeHorario() {
-			// TODO Auto-generated method stub
-			
+			if(isTieneReduccionHoraria()) {
+				System.out.println("Horario: 8:00 -> 14:00 y 16:00 -> 20:00");
+			}else {
+				System.out.println("Horario: 8:00 -> 16:00 y 16:00 -> 00:00");
+			}
 		}
 	}
 	
 	// Clase Proyecto
-	public class Proyecto {
-		   
-	}
+	/*public class Proyecto {
+	 * 	private String id;
+	 * 	private String descripcion;
+	 * 	private LocalDate fecha_inicio;
+	 *	private int numero_mes_duracion;
+	 * 	private double presupuesto;
+	}*/
 }

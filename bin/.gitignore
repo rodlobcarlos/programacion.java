@@ -10,10 +10,12 @@
 /controlador/
 /ejemploEnum/
 /ejerciciosEntorno/
+/excepciones/
 /expresionesRegulares/
 /gestionEmpleados/
 /miniSimulacion/
 /modelo/
+/nominas_y_empresa_modelo/
 /orientacionObjetos/
 /productosMain_controlador/
 /productosSupermercado_modelo/
@@ -27,4 +29,4 @@
 /simulacro2/
 /simulacro_1/
 /simulacro_2/
-/excepciones/
+/nomina_y_empresa_controlador/
