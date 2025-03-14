@@ -9,21 +9,29 @@ public class introductoria_excepciones {
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.print("Ingresa un número entero: ");
-		
+		int numero;
+
 		try {
-			int numero = scanner.nextInt();
-			System.out.print("Detrás del input: ");
+			numero = scanner.nextInt();
+			String cadena = "";
+			System.out.println(cadena.charAt(10));
 		}
 		catch (InputMismatchException e) {
-			
+			System.err.println("Entro en el catch1: " + e.getCause());
+			System.out.println("Entro en el catch1: " + e.getMessage());
+		}
+		
+		catch(StringIndexOutOfBoundsException carlos) {
+			System.err.println("Entro en el catch2: " + carlos.getCause());
+			System.out.println("Entro en el catch2: " + carlos.getMessage());
 		}
 		
 		finally {
 			System.out.println("Pase lo que pase salgo");
 		}
-		
-		System.out.print("Entro en el catch");
+		System.out.println("Sigo detrás de los finally");
+		System.out.print("Ingresa un número entero: ");
+		numero = scanner.nextInt();
 		scanner.close();
 	}
 }
-	
