@@ -2,8 +2,6 @@ package nominas_y_empresa_modelo;
 
 import java.util.Objects;
 
-import modelo.Empleado;
-
 // Clase empleado
 public abstract class AEmpleado {
 	private String nombre;
@@ -103,111 +101,10 @@ public abstract class AEmpleado {
 
 	public abstract void imprimeHorario();
 
-	// Clase enum Categoria
-	public enum Categoria {
-		JEFE_PROYECTO, SCRUM_MASTER, DESARROLLADOR_SENIOR, DESARROLLADOR_JUNIOR, ARQUITECTO
-	}
-
-	// Clase INomina
-	public interface INomina {
-		String nombre_empresa = "Jacaranda S.A";
-		String CIF_EMPRESA = "B12345678";
-
-		float calculaImporteNomina();
-	}
-
-	// Clase Desarrollador
-	public class Desarrollador extends AEmpleado implements INomina{
-		private String lenguajes;
-		private String frameworks;
-		
-		public String getLenguajes() {
-			return lenguajes;
-		}
-
-		public void setLenguajes(String lenguajes) {
-			this.lenguajes = lenguajes;
-		}
-
-		public String getFrameworks() {
-			return frameworks;
-		}
-
-		public void setFrameworks(String frameworks) {
-			this.frameworks = frameworks;
-		}
-
-		@Override
-		public String toString() {
-			return "Desarrollador [lenguajes=" + lenguajes + ", frameworks=" + frameworks + "]";
-		}
-
-		public Desarrollador(String nombre, int id, String apellidos, float salario, boolean tieneReduccionHoraria,
-				Categoria categ, String lenguajes, String frameworks) {
-			super(nombre, id, apellidos, salario, tieneReduccionHoraria, categ);
-			this.lenguajes = lenguajes;
-			this.frameworks = frameworks;
-		}
-
-		@Override
-		public String devuleveFunciones() {
-			return "Codificar, deseñar planes de pruebas y ejecutarlo";
-		}
-
-		@Override
-		public float calculaImporteNomina() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override
-		public void imprimeHorario() {
-			if(isTieneReduccionHoraria()) {
-				System.out.println("Horario: 8:00 -> 14:00 y 16:00 -> 20:00");
-			}else {
-				System.out.println("Horario: 8:00 -> 16:00 y 16:00 -> 00:00");
-			}
-		}
-	}
-	
-	// Clase Jefe_proyecto
-	public class Jefe_proyecto extends AEmpleado implements INomina {
-
-		
-		public Jefe_proyecto(String nombre, int id, String apellidos, float salario, boolean tieneReduccionHoraria,
-				Categoria categ) {
-			super(nombre, id, apellidos, salario, tieneReduccionHoraria, categ);
-			// TODO Auto-generated constructor stub
-		}
-
-		@Override
-		public float calculaImporteNomina() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override
-		public String devuleveFunciones() {
-			return "Planificar, asegurar la calidad y la entrega de plazos,"
-					+ "reporting y elaboración de ofertas";
-		}
-
-		@Override
-		public void imprimeHorario() {
-			if(isTieneReduccionHoraria()) {
-				System.out.println("Horario: 8:00 -> 14:00 y 16:00 -> 20:00");
-			}else {
-				System.out.println("Horario: 8:00 -> 16:00 y 16:00 -> 00:00");
-			}
-		}
-	}
-	
-	// Clase Proyecto
-	/*public class Proyecto {
-	 * 	private String id;
-	 * 	private String descripcion;
-	 * 	private LocalDate fecha_inicio;
-	 *	private int numero_mes_duracion;
-	 * 	private double presupuesto;
-	}*/
 }
+
+// Clase Proyecto
+/*class Proyecto { private String id; private String descripcion;
+ * private LocalDate fecha_inicio; private int numero_mes_duracion; private
+ * double presupuesto; }
+ */

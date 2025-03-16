@@ -2,9 +2,8 @@ package productosMain_controlador;
 
 import java.time.LocalDate;
 
-import productosSupermercado_modelo.*;
-import productosSupermercado_modelo.Producto.Pescado;
-import productosSupermercado_modelo.Producto.TipoPescado;
+import productosSupermercado_modelo.Pescado;
+import productosSupermercado_modelo.TipoPescado;
 
 public class ProductosMain {
 
