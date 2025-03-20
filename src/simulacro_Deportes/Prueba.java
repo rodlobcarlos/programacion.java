@@ -32,4 +32,6 @@ public class Prueba {
 	public void setEstado(EstadoPrueba estado) {
 		this.estado = estado;
 	}
+	
+	
 }

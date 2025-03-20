@@ -1,8 +1,8 @@
 package simulacro_Deportes;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public abstract class Deportista {
+public abstract class Deportista implements ICompeticion{
 	private String nombre;
 	private String pais;
 	private int edad;
@@ -46,10 +46,27 @@ public abstract class Deportista {
 	public void setPruebas_compite(Prueba[] pruebas_compite) {
 		this.pruebas_compite = pruebas_compite;
 	}
+	
 	abstract int getTiempoCalentamiento();
 	abstract int getCaloriasNecesarias();
-	abstract int getHorasEntrenamiento(Date fecha);
-	abstract void agregarPrueba(Prueba [] prueba );
-	abstract Prueba getProximaPrueba();
-	abstract int contarPruebasPorEstado(EstadoPrueba estado);
+	
+	int calculaDia;
+	int getHorasEntrenamiento(LocalDate fecha) {
+		for(Prueba a : pruebas_compite) {
+//			calculaDia; 
+		}
+		return edad;
+		
+	}
+	void agregarPrueba(Prueba [] prueba ) {
+		
+	}
+	Prueba getProximaPrueba() {
+		return null;
+		
+	}
+	int contarPruebasPorEstado(EstadoPrueba estado) {
+		return edad;
+	}
+
 }

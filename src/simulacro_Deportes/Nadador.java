@@ -1,8 +1,8 @@
 package simulacro_Deportes;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public class Nadador extends Deportista{
+public class Nadador extends Deportista {
 
 	@Override
 	int getTiempoCalentamiento() {
@@ -17,7 +17,7 @@ public class Nadador extends Deportista{
 	}
 
 	@Override
-	int getHorasEntrenamiento(Date fecha) {
+	int getHorasEntrenamiento(LocalDate fecha) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -36,6 +36,18 @@ public class Nadador extends Deportista{
 
 	@Override
 	int contarPruebasPorEstado(EstadoPrueba estado) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void competir() {
+		System.out.println("El deportista compite nadando");
+		System.out.println("Su modalidad es nada");
+	}
+
+	@Override
+	public int getTiempoPrueba() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
