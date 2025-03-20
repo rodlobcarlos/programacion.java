@@ -20,7 +20,5 @@ public class EmpleadoMain {
 		System.out.println(jePro.devuleveFunciones());
 		jePro.imprimeHorario();
 		System.out.println(jePro.calculaImporteNomina());
-
-		
 	}
 }

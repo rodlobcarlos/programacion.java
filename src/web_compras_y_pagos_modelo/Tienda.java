@@ -3,8 +3,8 @@ package web_compras_y_pagos_modelo;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class Tienda extends Pago{
-	private LocalDate fecha_dia; 
+public class Tienda extends Pago {
+	private LocalDate fecha_dia;
 	private Tienda[] pagos;
 	private int id;
 
@@ -43,8 +43,16 @@ public class Tienda extends Pago{
 	public String toString() {
 		return "Tienda [fecha_dia=" + fecha_dia + ", pagos=" + Arrays.toString(pagos) + ", id=" + id + "]";
 	}
-	
+
 	void imprimeResumenDia(LocalDate dia) {
-		 
+		for (Tienda pago : pagos) {
+			if (pago != null && pago.getFecha_dia().equals(dia)) {
+				System.out.println("ID de pago: " + pago.getId());
+				System.out.println("Tipo de divisa: " + pago.getDevisa());
+				System.out.println("Cantidad: " + pago.getCantidad());
+				System.out.println("Estado del pago: " + pago.getEstado());
+				System.out.println("-------------------------");
+			}
+		}
 	}
 }

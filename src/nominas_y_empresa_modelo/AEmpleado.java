@@ -104,7 +104,7 @@ public abstract class AEmpleado {
 }
 
 // Clase Proyecto
-/*class Proyecto { private String id; private String descripcion;
+/*public class Proyecto { private String id; private String descripcion;
  * private LocalDate fecha_inicio; private int numero_mes_duracion; private
  * double presupuesto; }
  */
