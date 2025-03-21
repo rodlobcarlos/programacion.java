@@ -1,5 +1,6 @@
 package simulacro_Deportes;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Prueba {
@@ -32,6 +33,21 @@ public class Prueba {
 	public void setEstado(EstadoPrueba estado) {
 		this.estado = estado;
 	}
+	public Prueba(int id, String lugar, Date fecha, EstadoPrueba estado) {
+		super();
+		this.id = id;
+		this.lugar = lugar;
+		this.fecha = fecha;
+		this.estado = estado;
+	}
+	public Prueba(String string, String lugar2, LocalDate now, EstadoPrueba planificada) {
+	}
+	@Override
+	public String toString() {
+		return "Prueba [id=" + id + ", lugar=" + lugar + ", fecha=" + fecha + ", estado=" + estado + "]";
+	}
+	
+	
 	
 	
 }

@@ -1,6 +1,7 @@
 package simulacro_Deportes;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public abstract class Deportista implements ICompeticion{
 	private String nombre;
@@ -47,24 +48,51 @@ public abstract class Deportista implements ICompeticion{
 		this.pruebas_compite = pruebas_compite;
 	}
 	
+	@Override
+	public String toString() {
+		return "Deportista [nombre=" + nombre + ", pais=" + pais + ", edad=" + edad + ", peso=" + peso + ", altura="
+				+ altura + ", pruebas_compite=" + Arrays.toString(pruebas_compite) + "]";
+	}
+	
+	public Deportista(String nombre, String pais, int edad, float peso, float altura) {
+		super();
+		this.nombre = nombre;
+		this.pais = pais;
+		this.edad = edad;
+		this.peso = peso;
+		this.altura = altura;
+		this.pruebas_compite = new Prueba [50];
+	}
+	
 	abstract int getTiempoCalentamiento();
 	abstract int getCaloriasNecesarias();
 	
-	int calculaDia;
 	int getHorasEntrenamiento(LocalDate fecha) {
-		for(Prueba a : pruebas_compite) {
-//			calculaDia; 
-		}
+		int numEntrenamiento;
+		
 		return edad;
 		
 	}
+	
+	
 	void agregarPrueba(Prueba [] prueba ) {
 		
 	}
 	Prueba getProximaPrueba() {
-		return null;
-		
+		Prueba p = pruebas_compite[0];
+		for(int i = 0; i < pruebas_compite.length; i++) {
+			if(p != null && pruebas_compite[i] != null && pruebas_compite[i].equals(EstadoPrueba.PLANIFICADA)) {
+				Prueba itero = pruebas_compite[i];
+				int diasMinimo = itero.getFecha().compareTo(LocalDate.now());
+				int diasItero = itero.getFecha().compareTo(LocalDate.now());
+				if (diasMinimo > diasItero ) {
+					p = itero;
+				}
+			}
+		}
+		return null;	
 	}
+	
 	int contarPruebasPorEstado(EstadoPrueba estado) {
 		return edad;
 	}

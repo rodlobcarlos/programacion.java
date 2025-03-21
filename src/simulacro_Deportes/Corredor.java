@@ -4,39 +4,37 @@ import java.time.LocalDate;
 
 public class Corredor extends Deportista {
 
+	public Corredor(String nombre, String pais, int edad, float peso, float altura, Prueba[] pruebas_compite) {
+		super(nombre, pais, edad, peso, altura);
+	}
+
 	@Override
 	int getTiempoCalentamiento() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	int getCaloriasNecesarias() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	int getHorasEntrenamiento(LocalDate fecha) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	void agregarPrueba(Prueba[] prueba) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	Prueba getProximaPrueba() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	int contarPruebasPorEstado(EstadoPrueba estado) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -49,7 +47,7 @@ public class Corredor extends Deportista {
 	@Override
 	public int getTiempoPrueba() {
 		
-		return 0;
+		return 10;
 	}
 	
 }
