@@ -19,6 +19,7 @@
 /nomina_y_empresa_controlador/
 /nominas_y_empresa_modelo/
 /orientacionObjetos/
+/pilotos_main_controlador/
 /productosMain_controlador/
 /productosSupermercado_modelo/
 /pruebaSorpresa/
@@ -31,8 +32,11 @@
 /simlacroInterfaces/
 /simulacro2/
 /simulacroPrueba/
+/simulacroVuelo_modelo/
 /simulacro_1/
 /simulacro_2/
 /simulacro_Deportes/
 /web_compras_y_pagos_controlador/
 /web_compras_y_pagos_modelo/
+/simlacro_Vehiculos_modelo/
+/simulacro_Vehiculos_controlador/
