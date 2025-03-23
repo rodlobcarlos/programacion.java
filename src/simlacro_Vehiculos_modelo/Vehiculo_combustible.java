@@ -12,6 +12,15 @@ public class Vehiculo_combustible extends Vehiculo_general {
 	private String modelo;
 	private String marca;
 
+	public Vehiculo_combustible(int id, Alquiler[] alquileres, boolean disponible_alquilado, String matricula,
+			boolean diesel, String modelo, String marca) {
+		super(id, alquileres, disponible_alquilado);
+		this.matricula = matricula;
+		this.diesel = diesel;
+		this.modelo = modelo;
+		this.marca = marca;
+	}
+
 	protected String getMatricula() {
 		return matricula;
 	}

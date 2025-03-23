@@ -1,6 +1,6 @@
 package simlacro_Vehiculos_modelo;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Patinete extends Vehiculo_general {
 
@@ -9,17 +9,17 @@ public class Patinete extends Vehiculo_general {
 		// TODO Auto-generated constructor stub
 	}
 	
-	private LocalDate tiempo_autonomia;
+	private Date tiempo_autonomia;
 	private String marca;
 	private String modelo;
 	private double cuantia_finanza;
 	private boolean abonado;
 
-	protected LocalDate getTiempo_autonomia() {
+	protected Date getTiempo_autonomia() {
 		return tiempo_autonomia;
 	}
 	
-	protected void setTiempo_autonomia(LocalDate tiempo_autonomia) {
+	protected void setTiempo_autonomia(Date tiempo_autonomia) {
 		this.tiempo_autonomia = tiempo_autonomia;
 	}
 	
@@ -55,7 +55,7 @@ public class Patinete extends Vehiculo_general {
 		this.abonado = abonado;
 	}
 
-	public Patinete(int id, Alquiler[] alquileres, boolean disponible_alquilado, LocalDate tiempo_autonomia,
+	public Patinete(int id, Alquiler[] alquileres, boolean disponible_alquilado, Date tiempo_autonomia,
 			String marca, String modelo, double cuantia_finanza, boolean abonado) {
 		super(id, alquileres, disponible_alquilado);
 		this.tiempo_autonomia = tiempo_autonomia;

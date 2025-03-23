@@ -6,7 +6,7 @@ import java.util.Date;
 public class Prueba {
 	private int id;
 	private String lugar;
-	private Date fecha;
+	private LocalDate fecha;
 	private EstadoPrueba estado;
 	
 	public int getId() {
@@ -21,10 +21,10 @@ public class Prueba {
 	public void setLugar(String lugar) {
 		this.lugar = lugar;
 	}
-	public Date getFecha() {
+	public LocalDate getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
 	public EstadoPrueba getEstado() {
@@ -33,7 +33,7 @@ public class Prueba {
 	public void setEstado(EstadoPrueba estado) {
 		this.estado = estado;
 	}
-	public Prueba(int id, String lugar, Date fecha, EstadoPrueba estado) {
+	public Prueba(int id, String lugar, LocalDate fecha, EstadoPrueba estado) {
 		super();
 		this.id = id;
 		this.lugar = lugar;
@@ -46,8 +46,6 @@ public class Prueba {
 	public String toString() {
 		return "Prueba [id=" + id + ", lugar=" + lugar + ", fecha=" + fecha + ", estado=" + estado + "]";
 	}
-	
-	
 	
 	
 }

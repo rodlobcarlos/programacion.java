@@ -1,12 +1,19 @@
 package simlacro_Vehiculos_modelo;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Furgoneta extends Vehiculo_combustible implements Alquilable{
 
 	public Furgoneta(int id, Alquiler[] alquileres, boolean disponible_alquilado) {
 		super(id, alquileres, disponible_alquilado);
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Furgoneta(int id, Alquiler[] alquileres, boolean disponible_alquilado, int plazas, double pma) {
+		super(id, alquileres, disponible_alquilado);
+		this.plazas = plazas;
+		this.pma = pma;
 	}
 	
 	private int plazas;
@@ -24,18 +31,12 @@ public class Furgoneta extends Vehiculo_combustible implements Alquilable{
 	public void setPma(double pma) {
 		this.pma = pma;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Furgoneta [plazas=" + plazas + ", pma=" + pma + "]";
+		return "Furgoneta [plazas=" + plazas + ", pma=" + pma + ", getPrecioPorDia()=" + getPrecioPorDia() + "]";
 	}
-	
-	public Furgoneta(int id, Alquiler[] alquileres, boolean disponible_alquilado, int plazas, double pma) {
-		super(id, alquileres, disponible_alquilado);
-		this.plazas = plazas;
-		this.pma = pma;
-	}
-	
+
 	@Override
 	public boolean estaAlquilado(LocalDate fecha) {
 		// TODO Auto-generated method stub
