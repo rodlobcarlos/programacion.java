@@ -5,7 +5,7 @@ import java.util.Date;
 public class Piloto_comercial extends Pilotos{
 
 	public Piloto_comercial(String nombre, String nacionalidad, int edad, int num_licencia, int total_horas_vuelo,
-			String vuelos_asignados) {
+			String vuelos_asignados, Vuelo[] lista_vuelos) {
 		super(nombre, nacionalidad, edad, num_licencia, total_horas_vuelo, vuelos_asignados, lista_vuelos);
 		// TODO Auto-generated constructor stub
 	}
@@ -23,7 +23,9 @@ public class Piloto_comercial extends Pilotos{
 
 	@Override
 	int contarVuelos() {
-		for(int i = 0; i < )
+		for() {
+			
+		}
 		return 0;
 	}
 

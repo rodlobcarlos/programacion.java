@@ -3,9 +3,9 @@ package simulacroVuelo_modelo;
 import java.util.Date;
 
 public class Piloto_Internacional extends Pilotos{
-
+	
 	public Piloto_Internacional(String nombre, String nacionalidad, int edad, int num_licencia, int total_horas_vuelo,
-			String vuelos_asignados) {
+			String vuelos_asignados, Vuelo[] lista_vuelos) {
 		super(nombre, nacionalidad, edad, num_licencia, total_horas_vuelo, vuelos_asignados, lista_vuelos);
 		// TODO Auto-generated constructor stub
 	}
