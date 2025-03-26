@@ -10,16 +10,32 @@ public class Nadador extends Deportista {
 
 	@Override
 	int getTiempoCalentamiento() {
-		return 2;
+		return 0;
 	}
 
 	@Override
 	int getCaloriasNecesarias() {
-		int calorias = 0;
-		for(int i = 0; i == getPeso(); i++) {
-			calorias = calorias + 100;
-		}
-		return calorias;
+		return 0;
+	}
+
+	@Override
+	int getHorasEntrenamiento(LocalDate fecha) {
+		return 0;
+	}
+
+	@Override
+	void agregarPrueba(Prueba[] prueba) {
+		
+	}
+
+	@Override
+	Prueba getProximaPrueba() {
+		return null;
+	}
+
+	@Override
+	int contarPruebasPorEstado(EstadoPrueba estado) {
+		return 0;
 	}
 
 	@Override

@@ -4,32 +4,26 @@ import java.time.LocalDate;
 
 public class DeportistasMain {
 
-	public static void main(String[] args) throws CompeticionException {
-		Prueba prueba1 = new Prueba(1, "Sevilla", LocalDate.now().minusDays(5), EstadoPrueba.PLANIFICADA);
-		Prueba prueba2 = new Prueba(1, "Albacete", LocalDate.now().minusDays(10), EstadoPrueba.CERRADA);
+	public static void main(String[] args) {
+		Prueba [] pruebas = new Prueba[50];
 		
-		Prueba [] prueba_compite = new Prueba[50];
-		prueba_compite[0] = prueba1;
+		Deportista d = new Corredor("Carlos", "Español", 20, 68, 180f, pruebas);
+		Prueba p = new Prueba("Prueba1", "Sevilla", LocalDate.now(), EstadoPrueba.PLANIFICADA);
 		
-		Deportista corredor = new Corredor("Carlos", "España", 20, 68.5f, 1.80f);
-		corredor.agragarPrueba(prueba1);
-		corredor.agragarPrueba(prueba2);
-		
-		// POR TERMINAR 
-		
-		try { 
-			prueba_compite[0] = prueba1;
-			for(int i = 0; i < prueba_compite.length; i++) {
-				if(prueba_compite != null && prueba_compite[i].equals(prueba_compite[i])) {
-					throw new CompeticionException("Prueba ya agregada");
-				}else {
-					throw new CompeticionException("No puedes añadir una prueba con fecha pasada");
-				}
-			}
+		pruebas[0] = p;
+		d.setPruebas_compite(pruebas);
+		System.out.println(d.getProximaPrueba());
+		/*try {
+			for(Prueba c : pruebas_compite) {
+				if(c.equals(c)) {
+					throw new CompeticionException("");
+				}else if (c.equals(EstadoPrueba.PLANIFICADA)) {
+				locaDate.now();
+			}else if () {
+			
 		}
 		catch (CompeticionException e) {
 			System.out.println(e.getMessage());
-			throw e;
-		}
+		}*/
 	}
 }
