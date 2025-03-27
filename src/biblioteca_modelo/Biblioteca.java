@@ -1,20 +1,26 @@
 package biblioteca_modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Biblioteca {
-	private List <String> libros;
+	private List <Libro> libros;
 
-	public List<String> getLibros() {
+	public List<Libro> getLibros() {
 		return libros;
 	}
 
-	public void setLibros(List<String> libros) {
+	public void setLibros(List<Libro> libros) {
 		this.libros = libros;
 	}
 
 	@Override
 	public String toString() {
 		return "Biblioteca [libros=" + libros + "]";
+	}
+
+	public Biblioteca(List<String> libros) {
+		super();
+		this.libros = new ArrayList<Libro>();
 	}
 }

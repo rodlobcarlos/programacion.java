@@ -6,13 +6,13 @@ public class Biblioteca_Main {
 
 	public static void main(String[] args) {
 		Biblioteca_Main f = new Biblioteca_Main();
-		f.menu();
+		String opcion = f.menu();		
 		
 		try {
-			switch(menu()) {
-			case 1:
+			switch(opcion) {
+			case "1":
 				System.out.println("1) Agregar un nuevo libro al inventario");
-			case 2:
+			case "2":
 				
 			}
 		} catch (Exception e) {
@@ -21,7 +21,8 @@ public class Biblioteca_Main {
 		}
 	}
 
-	static int menu() {
+	String menu() {
+	
 		System.out.println("1) Agregar un nuevo libro al inventario");
 		System.out.println("2) Prestar un ejemplar de un libro");
 		System.out.println("3) Devolver un ejemplar prestado");
@@ -32,9 +33,9 @@ public class Biblioteca_Main {
 		System.out.println("7) Salir del programa");
 		
 		Scanner scanner = new Scanner(System.in);
-		String opcion = "Elige una opción: ";
-		
-		System.out.println(opcion);
+		System.out.println("Elige una opción: ");
+		String opcion = scanner.next();
+
 		return opcion;
 	}
 }
