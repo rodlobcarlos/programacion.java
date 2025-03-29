@@ -42,7 +42,4 @@ public class Libro {
 		this.año_publicacion = año_publicacion;
 		this.estado = estado;
 	}
-	
-	
-	
 }

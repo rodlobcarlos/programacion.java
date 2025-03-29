@@ -17,6 +17,7 @@
 /expresionesRegulares/
 /gestionEmpleados/
 /listas/
+/listas1_0/
 /miniSimulacion/
 /modelo/
 /nomina_y_empresa_controlador/
@@ -38,11 +39,9 @@
 /rodriguez_carlos_Examen1/
 /rodriguez_carlos_Examen2.zip
 /rodriguez_carlos_Examen2/
-/simlacroInterfaces/
 /simlacro_Vehiculos_modelo/
 /simulacro2/
 /simulacroNuevo_modelo/
-/simulacroPrueba/
 /simulacroVuelo_modelo/
 /simulacro_1/
 /simulacro_2/
@@ -50,4 +49,5 @@
 /simulacro_Vehiculos_controlador/
 /web_compras_y_pagos_controlador/
 /web_compras_y_pagos_modelo/
-/listas1_0/
+/deportistas_modelo/
+/deportista_controlador/
