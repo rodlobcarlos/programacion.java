@@ -1,14 +1,8 @@
 package historial_navegacion_modelo;
 
-<<<<<<< HEAD
-import java.time.LocalDateTime;
-import java.util.Objects;
-=======
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Scanner;
->>>>>>> 62b6b07068a58deda1e11cdd04506751a3c55335
 
 public class PaginaWeb {
 	private String url;
@@ -28,11 +22,7 @@ public class PaginaWeb {
 	}
 	@Override
 	public int hashCode() {
-<<<<<<< HEAD
-		return Objects.hash(fecha);
-=======
 		return Objects.hash(this.fecha.compareTo(fecha));
->>>>>>> 62b6b07068a58deda1e11cdd04506751a3c55335
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -45,23 +35,17 @@ public class PaginaWeb {
 		PaginaWeb other = (PaginaWeb) obj;
 		return Objects.equals(fecha, other.fecha);
 	}
-<<<<<<< HEAD
-=======
 	
->>>>>>> 62b6b07068a58deda1e11cdd04506751a3c55335
 	public PaginaWeb(String url, LocalDateTime fecha) {
 		super();
 		this.url = url;
 		this.fecha = fecha;
 	}
-<<<<<<< HEAD
 	@Override
 	public String toString() {
 		return "PaginaWeb [url=" + url + ", fecha=" + fecha + "]";
 	}
-	
-	
-=======
+
 	void agragarPaginaHistorial() throws HistorialException{
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Dame el nombre de la página web: ");
@@ -77,5 +61,4 @@ public class PaginaWeb {
 	void consultarHistorialCompleto() {
 		for()
 	}
->>>>>>> 62b6b07068a58deda1e11cdd04506751a3c55335
 }

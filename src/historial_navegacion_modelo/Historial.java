@@ -1,24 +1,5 @@
 package historial_navegacion_modelo;
 
-<<<<<<< HEAD
-import java.util.TreeSet;
-
-public class Historial {
-	private TreeSet<Historial> historial1;
-
-	public TreeSet<Historial> getHistorial1() {
-		return historial1;
-	}
-
-	public void setHistorial1(TreeSet<Historial> historial1) {
-		this.historial1 = historial1;
-	}
-
-	public Historial(TreeSet<Historial> historial1) {
-		super();
-		this.historial1 = historial1;
-=======
-import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Historial {
@@ -35,18 +16,11 @@ public class Historial {
 	public Historial(TreeSet<PaginaWeb> historial) {
 		super();
 		this.historial = historial;
->>>>>>> 62b6b07068a58deda1e11cdd04506751a3c55335
 	}
 
 	@Override
 	public String toString() {
-<<<<<<< HEAD
-		return "Historial [historial1=" + historial1 + "]";
-	}
-	
-	
-=======
-		return "Historial [historial=" + historial + "]";
+		return "Historial [historial1=" + historial + "]";
 	}
 	
 	// ITERAR SET HISTORIAL
@@ -75,6 +49,7 @@ public class Historial {
 		
 	}
 */ 
->>>>>>> 62b6b07068a58deda1e11cdd04506751a3c55335
+
+	}
 }
 
