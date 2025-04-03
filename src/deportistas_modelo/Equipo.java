@@ -27,13 +27,13 @@ public class Equipo {
 		return "Equipo [nombre=" + nombre + ", alumnos=" + alumnos + "]";
 	}
 
-	public Equipo(String nombre, LinkedList<Alumno> alumnos) {
+	public Equipo(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.alumnos = alumnos;
+		this.alumnos = new LinkedList<Alumno>();
 	}
 
-	void añadirAlumno(Alumno a) throws DeportivosException {
+	public void añadirAlumno(Alumno a) throws DeportivosException {
 		if(alumnos.contains(a)) {
 			throw new DeportivosException("Este alumno ya está en la lista");
 		}else {
@@ -41,7 +41,7 @@ public class Equipo {
 		}
 	}
 	
-	void borrarAlumno(Alumno a) throws DeportivosException {
+	public void borrarAlumno(Alumno a) throws DeportivosException {
 		if(alumnos.contains(a)) {
 			alumnos.remove(a);
 		}else {
@@ -49,7 +49,7 @@ public class Equipo {
 		}
 	}
 	
-	LinkedList<Alumno> alumnoPertenece(Alumno a) {
+	public LinkedList<Alumno> alumnoPertenece(Alumno a) {
 		if(alumnos.contains(a)) {
 			return alumnos;
 		}else {
@@ -57,9 +57,13 @@ public class Equipo {
 		}
 	}
 	
-	void mostrarLista() {
+	public void mostrarLista() {
 		for(Alumno a : alumnos) {
 			System.out.println(a);
 		}
 	}
+	
+	public void mostrarEquipo() {
+        System.out.println("Equipo: "+ getNombre() + alumnos.toString());
+    }
 }
