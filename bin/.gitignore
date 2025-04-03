@@ -3,6 +3,7 @@
 /.gitignore
 /.project
 /actsOrientacionObj/
+/animales_modelo/
 /biblioteca_controlador/
 /biblioteca_modelo/
 /boletin_2/
@@ -11,11 +12,16 @@
 /boletin_5/
 /boletin_excepciones/
 /controlador/
+/deportista_controlador/
+/deportistas_modelo/
 /ejemploEnum/
 /ejerciciosEntorno/
 /excepciones/
 /expresionesRegulares/
 /gestionEmpleados/
+/gestiona_Animales/
+/gestiona_Historial/
+/historial_navegacion_modelo/
 /listas/
 /listas1_0/
 /miniSimulacion/
@@ -31,6 +37,7 @@
 /repaso/
 /repasoTiendaAnimales_modelo/
 /repositorioPrestamos/
+/repositorio_Animales/
 /rodriguez_carlos.zip
 /rodriguez_carlos/
 /rodriguez_carlos2.zip
@@ -49,5 +56,3 @@
 /simulacro_Vehiculos_controlador/
 /web_compras_y_pagos_controlador/
 /web_compras_y_pagos_modelo/
-/deportistas_modelo/
-/deportista_controlador/
