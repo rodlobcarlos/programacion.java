@@ -38,12 +38,14 @@ public class Equipo {
 			throw new DeportivosException("Este alumno ya está en la lista");
 		}else {
 			alumnos.add(a);
+			System.out.println(a + " añadido");
 		}
 	}
 	
 	public void borrarAlumno(Alumno a) throws DeportivosException {
 		if(alumnos.contains(a)) {
 			alumnos.remove(a);
+			System.out.println(a+ " borrado");
 		}else {
 			throw new DeportivosException("Este alumno no existe en la lista");
 		}
@@ -51,6 +53,7 @@ public class Equipo {
 	
 	public LinkedList<Alumno> alumnoPertenece(Alumno a) {
 		if(alumnos.contains(a)) {
+			System.out.println("Alumno que pertenece al equipo: ");
 			return alumnos;
 		}else {
 			return null;
@@ -59,11 +62,23 @@ public class Equipo {
 	
 	public void mostrarLista() {
 		for(Alumno a : alumnos) {
-			System.out.println(a);
+			System.out.println("Lista del equipo: " + a);
 		}
 	}
 	
 	public void mostrarEquipo() {
         System.out.println("Equipo: "+ getNombre() + alumnos.toString());
     }
+	
+/*	public Equipo union(Equipo eq, LinkedList<Alumno> alumno) {
+		for(Alumno alumno : alumnos) {
+			return alumno + eq;
+		}
+	}
+*/
+	
+/*	public Equipo intersecionEquipos(Equipo eq) {
+		return eq;
+ }
+*/
 }

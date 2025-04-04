@@ -2,17 +2,24 @@ package biblioteca_controlador;
 
 import java.util.Scanner;
 
+import biblioteca_modelo.Biblioteca;
+import biblioteca_modelo.EstadoLibro;
+import biblioteca_modelo.Libro;
+
 public class Biblioteca_Main {
 
 	public static void main(String[] args) {
 		Biblioteca_Main f = new Biblioteca_Main();
-		String opcion = f.menu();		
+		int opcion = f.menu();		
+		
+		Libro l1 = new Libro("Titulo1", "literario", "2025", EstadoLibro.PRESTADO);
 		
 		try {
 			switch(opcion) {
-			case "1":
-				System.out.println("1) Agregar un nuevo libro al inventario");
-			case "2":
+			case 1:
+				Biblioteca lb;
+				lb.agregarLibro(l1);
+			case 2:
 				
 			}
 		} catch (Exception e) {
@@ -21,7 +28,7 @@ public class Biblioteca_Main {
 		}
 	}
 
-	String menu() {
+	int menu() {
 	
 		System.out.println("1) Agregar un nuevo libro al inventario");
 		System.out.println("2) Prestar un ejemplar de un libro");
@@ -34,7 +41,7 @@ public class Biblioteca_Main {
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Elige una opción: ");
-		String opcion = scanner.next();
+		int opcion = scanner.nextInt();
 
 		return opcion;
 	}

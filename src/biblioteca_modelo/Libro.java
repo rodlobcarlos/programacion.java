@@ -1,4 +1,6 @@
-package biblioteca_modelo;
+ package biblioteca_modelo;
+
+import java.util.List;
 
 public class Libro {
 	private String titulo;

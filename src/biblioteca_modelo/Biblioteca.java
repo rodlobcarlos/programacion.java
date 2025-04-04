@@ -24,5 +24,11 @@ public class Biblioteca {
 		this.libros = new ArrayList<Libro>();
 	}
 	
-	
+	public List<Libro> agregarLibro(Libro l){
+		if(l.equals(l)) {
+			libros.add(l);
+		}
+		return null;
+		
+	}
 }
