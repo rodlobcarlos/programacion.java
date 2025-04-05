@@ -34,51 +34,61 @@ public class Equipo {
 	}
 
 	public void añadirAlumno(Alumno a) throws DeportivosException {
-		if(alumnos.contains(a)) {
+		if (alumnos.contains(a)) {
 			throw new DeportivosException("Este alumno ya está en la lista");
-		}else {
+		} else {
 			alumnos.add(a);
 			System.out.println(a + " añadido");
 		}
 	}
-	
+
 	public void borrarAlumno(Alumno a) throws DeportivosException {
-		if(alumnos.contains(a)) {
+		if (alumnos.contains(a)) {
 			alumnos.remove(a);
-			System.out.println(a+ " borrado");
-		}else {
+			System.out.println(a + " borrado");
+		} else {
 			throw new DeportivosException("Este alumno no existe en la lista");
 		}
 	}
-	
+
 	public LinkedList<Alumno> alumnoPertenece(Alumno a) {
-		if(alumnos.contains(a)) {
+		if (alumnos.contains(a)) {
 			System.out.println("Alumno que pertenece al equipo: ");
 			return alumnos;
-		}else {
+		} else {
 			return null;
 		}
 	}
-	
+
 	public void mostrarLista() {
-		for(Alumno a : alumnos) {
+		for (Alumno a : alumnos) {
 			System.out.println("Lista del equipo: " + a);
 		}
 	}
-	
+
 	public void mostrarEquipo() {
-        System.out.println("Equipo: "+ getNombre() + alumnos.toString());
-    }
-	
-/*	public Equipo union(Equipo eq, LinkedList<Alumno> alumno) {
-		for(Alumno alumno : alumnos) {
-			return alumno + eq;
-		}
+		System.out.println("Equipo: " + getNombre() + alumnos.toString());
 	}
-*/
-	
-/*	public Equipo intersecionEquipos(Equipo eq) {
-		return eq;
- }
-*/
+
+	public Equipo union(Equipo otro) {
+		Equipo equipoUnido = new Equipo(nombre + otro.nombre);
+
+		System.out.println("Equipo unido:");
+
+		equipoUnido.alumnos.addAll(alumnos);
+		equipoUnido.alumnos.addAll(otro.alumnos);
+		return equipoUnido;
+	}
+
+	public Equipo intersecionEquipos(Equipo otro) {
+		Equipo equipoInterseccion = new Equipo(nombre + otro.nombre);
+		System.out.println("Interseccion equipos:");
+
+		for (Alumno alum : alumnos) {
+			if (otro.alumnos.contains(alum)) {
+				equipoInterseccion.alumnos.add(alum);
+			}
+		}
+		return equipoInterseccion;
+	}
 }

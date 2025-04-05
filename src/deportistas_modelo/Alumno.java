@@ -42,6 +42,4 @@ public class Alumno	{
 		this.nombre = nombre;
 		DNI = dNI;
 	}
-	
-	
 }

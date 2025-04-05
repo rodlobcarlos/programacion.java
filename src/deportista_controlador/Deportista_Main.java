@@ -31,6 +31,8 @@ public class Deportista_Main {
 			eq1.añadirAlumno(alu2);
 			eq2.añadirAlumno(alu3);
 			eq2.añadirAlumno(alu4);
+			eq2.añadirAlumno(alu1);
+
 		} catch (DeportivosException e) {
 			System.out.println(e.getMessage());
 //			throw e;
@@ -48,5 +50,7 @@ public class Deportista_Main {
 		eq1.mostrarEquipo();
 		
 		System.out.println(eq1.union(eq2));
+		
+		System.out.println(eq1.intersecionEquipos(eq2));
 	}
 }
