@@ -19,16 +19,26 @@ public class Biblioteca {
 		return "Biblioteca [libros=" + libros + "]";
 	}
 
-	public Biblioteca(List<String> libros) {
+	public Biblioteca() {
 		super();
 		this.libros = new ArrayList<Libro>();
 	}
 	
-	public List<Libro> agregarLibro(Libro l){
-		if(l.equals(l)) {
-			libros.add(l);
-		}
-		return null;
-		
+	public void agregarLibro(Libro l){
+		libros.add(l);
+		System.out.println(l + " ha sido añadido");
 	}
+	
+	EstadoLibro estado;
+	public void prestarLibro(Libro l) throws BibliotecaException {
+		for(Libro libro : libros) {
+			if(libros.contains(libro) && estado.equals(EstadoLibro.PRESTADO)) {
+				l.setEstado(EstadoLibro.PRESTADO);
+				System.out.println(l + " está prestado");
+			}else {
+				throw new BibliotecaException("Este libro no está en el inventario o está en estado libre");
+			}
+		}
+	}
+	
 }
