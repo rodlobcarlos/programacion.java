@@ -41,6 +41,6 @@ public class EntradaVip {
 		this.codigo_entrada = codigo_entrada;
 		this.fecha_entrada = fecha_entrada;
 		this.tipo = tipo;
-		this.estado = estado;  
+		setEstado(estado);  
 	}
 }
