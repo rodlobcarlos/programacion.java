@@ -54,8 +54,8 @@ public class RegistroEntradas {
 		return confirmar;
 	}
 
+	Influencers f;
 	public boolean listadoEntradaConfir(Estadoentrada e) {
-		Influencers f;
 		boolean confirmada = false;
 		Map<Influencers, EntradaVip> entrada = new HashMap<>();
 		Set<Map.Entry<Influencers, EntradaVip>> entradas = entrada.entrySet();

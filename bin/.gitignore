@@ -11,6 +11,8 @@
 /boletin_4/
 /boletin_5/
 /boletin_excepciones/
+/comicFest_Main/
+/comic_fest_España_modelo/
 /controlador/
 /deportista_controlador/
 /deportistas_modelo/
@@ -57,5 +59,4 @@
 /simulacro_Vehiculos_controlador/
 /web_compras_y_pagos_controlador/
 /web_compras_y_pagos_modelo/
-/comic_fest_España_modelo/
-/comicFest_Main/
+/simulacion_VehiculosTraficoRematri_modelo/
