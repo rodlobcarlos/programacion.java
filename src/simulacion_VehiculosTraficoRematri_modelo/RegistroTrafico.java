@@ -7,13 +7,13 @@ import java.util.Set;
 import java.util.Map.Entry;
 
 public class RegistroTrafico {
-	private HashMap<String, Vehiculo> vehiculos;
+	private HashMap<Rematriculacion, Vehiculo> vehiculos;
 
-	public HashMap<String, Vehiculo> getVehiculos() {
+	public HashMap<Rematriculacion, Vehiculo> getVehiculos() {
 		return vehiculos;
 	}
 
-	public void setVehiculos(HashMap<String, Vehiculo> vehiculos) {
+	public void setVehiculos(HashMap<Rematriculacion, Vehiculo> vehiculos) {
 		this.vehiculos = vehiculos;
 	}
 
@@ -22,12 +22,12 @@ public class RegistroTrafico {
 		return "RegistroTrafico [vehiculos=" + vehiculos + "]";
 	}
 
-	public RegistroTrafico(HashMap<String, Vehiculo> vehiculos) {
+	public RegistroTrafico(HashMap<Rematriculacion, Vehiculo> vehiculos) {
 		super();
-		this.vehiculos = new HashMap<String, Vehiculo>(); // (vehiculos)
+		this.vehiculos = new HashMap<Rematriculacion, Vehiculo>(); // (vehiculos)
 	}
 
-	public boolean agregarVehiculo(String r, Vehiculo v) {
+	public boolean agregarVehiculo(Rematriculacion r, Vehiculo v) {
 		boolean registrado = false;
 		if (v.equals(v)) {
 			System.out.println("Este vehiculo ya está en la lista");
@@ -38,59 +38,57 @@ public class RegistroTrafico {
 		return registrado;
 	}
 
+	RegistroTrafico l;
+
 	public boolean registrarRematriculacion(Rematriculacion r) {
 		boolean rematriculado = false;
 		if (vehiculos.containsKey(r.getNum_bastidor()) && vehiculos.containsKey(r.getMatricula_final())
 				&& vehiculos.containsKey(r.getFecha_matriculacion())) {
 			rematriculado = true;
+		} else {
+			l.agregarVehiculo(null, null);
 		}
 		return rematriculado;
 	}
 
-	public boolean buscarVehiculoBasti(Vehiculo v) {
+	public boolean buscarVehiculoBasti(HashMap<String, Vehiculo> m) {
 		boolean encontrado = false;
-		Map<String, Vehiculo> entrada = new HashMap<>();
-		Set<Map.Entry<String, Vehiculo>> entradas = entrada.entrySet();
-		Entry<String, Vehiculo> elemento;
-		Iterator it = entradas.iterator();
-
-		while (it.hasNext()) {
-			elemento = (Entry<String, Vehiculo>) it.next();
-			if (vehiculos.containsKey(v.getNum_bastidor())) {
-				encontrado = true;
-				System.out.println(v.toString());
+		for (Vehiculo n : m.values()) {
+			if(m.containsKey(n)) {
+				if(n.getNum_bastidor() != null) {
+					encontrado = true; 
+				}
 			}
 		}
 		return encontrado;
 	}
 
-	public HashMap<String, Vehiculo> mostrarVehiculosAñoMatric(Vehiculo v, Rematriculacion fecha) {
-		Map<String, Vehiculo> entrada = new HashMap<>();
-		Set<Map.Entry<String, Vehiculo>> entradas = entrada.entrySet();
-		Entry<String, Vehiculo> elemento;
+	public void mostrarVehiculosAñoMatric(Vehiculo v, Rematriculacion fecha) {
+		Map<Rematriculacion, Vehiculo> entrada = new HashMap<>();
+		Set<Map.Entry<Rematriculacion, Vehiculo>> entradas = entrada.entrySet();
+		Entry<Rematriculacion, Vehiculo> elemento;
 		Iterator it = entradas.iterator();
 
 		while (it.hasNext()) {
-			elemento = (Entry<String, Vehiculo>) it.next();
-			if (vehiculos.containsKey(fecha.getFecha_matriculacion())) {
+			elemento = (Entry<Rematriculacion, Vehiculo>) it.next();
+			if(elemento.getValue().getAño_fabricacion() != null) {
+				System.out.println(elemento);
 			}
 		}
-		return vehiculos;
 	}
 
 	Rematriculacion r;
-	public HashMap<String, Vehiculo> mostrarRematriculacionVehiculo(Vehiculo v) {
-		Map<String, Vehiculo> entrada = new HashMap<>();
-		Set<Map.Entry<String, Vehiculo>> entradas = entrada.entrySet();
-		Entry<String, Vehiculo> elemento;
+	public void mostrarRematriculacionVehiculo(Vehiculo v) {
+		Map<Rematriculacion, Vehiculo> entrada = new HashMap<>();
+		Set<Map.Entry<Rematriculacion, Vehiculo>> entradas = entrada.entrySet();
+		Entry<Rematriculacion, Vehiculo> elemento;
 		Iterator it = entradas.iterator();
 
 		while (it.hasNext()) {
-			elemento = (Entry<String, Vehiculo>) it.next();
-			if(vehiculos.containsKey(v)) {
-				System.out.println(r.toString());
+			elemento = (Entry<Rematriculacion, Vehiculo>) it.next();
+			if (elemento.getValue().toString() != null) {
+				System.out.println(elemento);
 			}
 		}
-		return vehiculos;
 	}
 }

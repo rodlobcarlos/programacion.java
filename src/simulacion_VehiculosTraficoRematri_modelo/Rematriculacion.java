@@ -1,6 +1,7 @@
 package simulacion_VehiculosTraficoRematri_modelo;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Rematriculacion {
 	private String num_bastidor;
@@ -44,5 +45,21 @@ public class Rematriculacion {
 		this.matricula_inicial = matricula_inicial;
 		this.matricula_final = matricula_final;
 		this.fecha_matriculacion = fecha_matriculacion;
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(fecha_matriculacion, num_bastidor);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rematriculacion other = (Rematriculacion) obj;
+		return Objects.equals(fecha_matriculacion, other.fecha_matriculacion)
+				&& Objects.equals(num_bastidor, other.num_bastidor);
 	}
 }	
