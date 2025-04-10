@@ -3,6 +3,7 @@ package repositorioSimulacionEventos;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Set;
 
 import simulacionReservasEntradasEventos_modelo.Eventos;
 import simulacionReservasEntradasEventos_modelo.Reserva;
@@ -30,35 +31,47 @@ public class ListadoEventos {
 		this.eventos = eventos;
 	}
 
-	public LinkedList<Eventos> agregarEvento(Eventos evento) throws ReservaException {
+	public void agregarEvento(Eventos evento) throws ReservaException {
+		
 		if (evento.getFecha_evento().isBefore(LocalDate.now())) {
 			throw new ReservaException("Esta fecha es pasada a la del evento");
-		} else if (evento.equals(evento.getNombre())) {
+			
+		} else if (this.evento.equals(evento.getNombre())) {
 			throw new ReservaException("Hay un evento con el mismo nombre");
-		} else if (evento.equals(evento.getFecha_evento())) {
+			
+		} else if (this.evento.equals(evento.getFecha_evento())) {
 			throw new ReservaException("Hay un evento la misma fecha");
+			
 		} else {
 			eventos.add(evento);
+			
 		}
-		return eventos;
 	}
 
-	public LinkedList<Eventos> devolverReserva(Reserva id, Reserva nombreEvento, Reserva fecha) {
-		if (eventos.contains(id) && eventos.contains(nombreEvento) && eventos.contains(fecha)) {
-			System.out.println("Reserva: " + id.toString());
-			return eventos;
-		} else {
-			return null;
+	public Reserva devolverReserva(int id, String nombreEvento, 
+			String fecha) {
+		
+		Eventos evento1 = new Eventos(fecha, LocalDate.now(), "", null);
+		for(Eventos e : eventos) {
+			if(e.equals(evento1)) {
+				return e;
+			}
 		}
+		
 	}
 
 	Eventos evento;
-	public LinkedList<Eventos> agregarReservaUsuario(Usuario email, Eventos id) throws ReservaException {
+	public LinkedList<Eventos> agregarReservaUsuario(Usuario email, Eventos id) 
+			throws ReservaException {
+		
 		if(eventos == null) {
 			throw new ReservaException("El evento no existe");
+			
 		}else if(eventos.contains(email) && eventos.contains(id)) {
-			eventos.
+			
+			
 		}
 		return eventos;
+		
 	}
 }

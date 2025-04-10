@@ -45,6 +45,7 @@ public class Reserva {
 		this.estado = estado;
 		User_reserva = user_reserva;
 	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id_reserva);
@@ -60,4 +61,5 @@ public class Reserva {
 		Reserva other = (Reserva) obj;
 		return id_reserva == other.id_reserva;
 	}
+	
 }
