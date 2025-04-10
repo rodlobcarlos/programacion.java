@@ -1,7 +1,10 @@
 package simulacion_VehiculosTraficoRematri_modelo;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
@@ -61,6 +64,18 @@ public class RegistroTrafico {
 			}
 		}
 		return encontrado;
+	}
+	
+	public List<Vehiculo> vehiculosPropietario(String propietario) {
+		List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
+		for(Vehiculo v: (vehiculos.) {
+			if(v.getPropietario_actual().equals(propietario)) {
+				vehiculos.add(v);
+			}
+		}
+		Collections.sort(vehiculos);
+		return vehiculos;
+		
 	}
 
 	public void mostrarVehiculosAñoMatric(Vehiculo v, Rematriculacion fecha) {

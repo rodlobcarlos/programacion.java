@@ -3,7 +3,7 @@ package simulacion_VehiculosTraficoRematri_modelo;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Vehiculo implements Comparable<Vehiculo>{
+public class Vehiculo {
 	private String num_bastidor;
 	private String num_matricula;
 	private String marca;
@@ -77,11 +77,5 @@ public class Vehiculo implements Comparable<Vehiculo>{
 		this.modelo = modelo;
 		this.año_fabricacion = año_fabricacion;
 		this.propietario_actual = propietario_actual;
-	}
-	
-	@Override
-	public int compareTo(Vehiculo o) {
-		int comparable = this.num_bastidor.compareTo(o.getNum_bastidor());
-		return comparable;
 	}
 }
