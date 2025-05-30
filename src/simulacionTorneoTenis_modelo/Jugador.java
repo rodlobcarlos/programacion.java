@@ -52,6 +52,4 @@ public class Jugador {
 		this.jugadores = new ;
 		this.partidos = partidos;
 	}
-	
-	
 }

@@ -52,6 +52,7 @@
 /rodriguez_carlos_Examen2/
 /simlacro_Vehiculos_modelo/
 /simulacionReservasEntradasEventos_modelo/
+/simulacionTorneoTenis_modelo/
 /simulacion_VehiculosTraficoRematri_modelo/
 /simulacro2/
 /simulacroNuevo_modelo/
@@ -62,4 +63,6 @@
 /simulacro_Vehiculos_controlador/
 /web_compras_y_pagos_controlador/
 /web_compras_y_pagos_modelo/
-/simulacionTorneoTenis_modelo/
+/list/
+/herencias/
+/excepcion/
