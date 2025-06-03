@@ -1,40 +1,46 @@
 package excepcion;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Act4 {
 
 	public static void main(String[] args) {
-		float[] divisiones = new float[20];
-		Random numero = new Random();
-		for (int i = 0; i < 20; i++) {
-			try {
-				double valor1 = numero.nextDouble();
-				double valor2 = numero.nextDouble();
-
-				if (valor2 == 0) {
-					throw new ArithmeticException("No puedes dividir por cero");
+		
+		int table []  = new able [10]; ;
+		int num = 0;
+		int num1 = 0;
+		try {
+			for (int i = 0; i <= 20; i++) {
+				Random random = new Random();
+				int numero1 = random.nextInt(11);
+				int numero2 = random.nextInt(11);
+				
+				int division = numero1 / numero2;
+				listaNumeros.add(division);
+				
+			} if(listaNumeros.size()> 99) {
+				throw new ArrayIndexOutOfBoundsException("La longitud es mayor a la permitida");
+				
+			} if(num == 0 || num1 == 0) {
+				throw new ArrayIndexOutOfBoundsException("Estás dividiendo por cero.");
+				
+			} for(Integer division : listaNumeros) {
+				if(division == null) {
+					throw new NullPointerException();
 				}
-				if (i >= 20) {
-					throw new ArrayIndexOutOfBoundsException("Guardando en más de 20");
-				}
-				divisiones[i] = (float) (valor1 / valor2);
-			} catch (ArithmeticException e1) {
-				System.out.println("Sale 0");
-				throw e1;
-			} catch (ArrayIndexOutOfBoundsException e2) {
-				System.out.println(e2.getMessage());
-				throw e2;
-			} finally {
-				try {
-					System.out.println(Arrays.toString(divisiones));
-				}
-				catch (NullPointerException e3) {
-					throw e3;
-				}
-			}
+				
+			} 
+			
+		} catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println(e.getMessage());
+			
+		} catch (ArithmeticException a) {
+			System.out.println(a.getMessage());
+			
+		}catch (NullPointerException r) {
+			System.out.println(r.getMessage());
 		}
+		
 	}
 
 }
