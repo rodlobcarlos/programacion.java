@@ -1,6 +1,7 @@
 package animales_modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,7 +33,7 @@ public class ReservaAnimal {
 		return animales;
 	}
 	public void setAnimales(List<Animal> animales) {
-		this.animales = animales;
+		this.animales = animales;z
 	}
 	@Override
 	public String toString() {
@@ -44,11 +45,11 @@ public class ReservaAnimal {
 		this.nombre = nombre;
 		this.lugar = lugar;
 		this.presupuesto_anual = presupuesto_anual;
-		this.animales = new ArrayList<Animal>();
 	}
+	
 	@Override
 	public int hashCode() {
-		return Objects.hash(this.nombre.compareTo(nombre));
+		return Objects.hash(nombre, lugar);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -64,6 +65,7 @@ public class ReservaAnimal {
 	
 	public List<Animal> agregarAnimal(Animal a){
 		animales.add(a);
+		Collections.sort(animales);
 		System.out.println(a + " ha sido añadido");
 		return animales;
 	}
@@ -71,4 +73,5 @@ public class ReservaAnimal {
 	public void mostrarInformacion(Animal a){
 		System.out.println(a.getNombre() + " " + a.getFecha_nacimiento() + " " + a.getMedio() + " " + a.getComida());
 	}
+	
 }

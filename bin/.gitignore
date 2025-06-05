@@ -37,6 +37,7 @@
 /modelo/
 /nomina_y_empresa_controlador/
 /nominas_y_empresa_modelo/
+/ordenaciones/
 /orientacionObjetos/
 /pilotos_main_controlador/
 /productosMain_controlador/
@@ -70,4 +71,3 @@
 /simulacro_Vehiculos_controlador/
 /web_compras_y_pagos_controlador/
 /web_compras_y_pagos_modelo/
-/ordenaciones/

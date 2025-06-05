@@ -14,11 +14,11 @@ import animales_modelo.ReservaAnimal;
 public class ReservaAnimal_main {
 
 	public static void main(String[] args) {
-		ReservaAnimal reserva = new ReservaAnimal("Reserva1", "España", 200000, null);
 		
 		List<Animal> animales = new ArrayList<Animal>(); 
-//		Queda pendiente terminar el sort para que ordene por nombre
-//		Collections.sort((List<Animal>) animales);
+		ReservaAnimal reserva = new ReservaAnimal("Reserva1", "España", 20000, animales);
+
+		Collections.sort((List<Animal>) animales);
 
 		
 		Animal animal1 = new Animal("carmelo", "1", "camello", 8, ClasificacionComida.HERVIBOROS, LocalDate.now(), 6.3f, Medio.TIERRA, ClasificacionGestacion.OVIPAROS);
@@ -27,12 +27,15 @@ public class ReservaAnimal_main {
 		animales.add(animal1);
 		animales.add(animal2);
 
-		
 		reserva.agregarAnimal(animal1);
 		reserva.agregarAnimal(animal2);
 
-		 reserva.mostrarInformacion(animal1);
-		 
+		reserva.mostrarInformacion(animal1);
+		reserva.mostrarInformacion(animal2);
+
+		
+		animal1.compareTo(animal2);
+		
 	}
 
 }
