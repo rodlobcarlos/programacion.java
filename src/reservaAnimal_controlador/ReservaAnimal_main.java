@@ -13,12 +13,12 @@ import animales_modelo.ReservaAnimal;
 
 public class ReservaAnimal_main {
 
-	public static <T> void main(String[] args) {
+	public static void main(String[] args) {
 		ReservaAnimal reserva = new ReservaAnimal("Reserva1", "España", 200000, null);
 		
 		List<Animal> animales = new ArrayList<Animal>(); 
 //		Queda pendiente terminar el sort para que ordene por nombre
-		Collections.sort((List<Animal>) animales);
+//		Collections.sort((List<Animal>) animales);
 
 		
 		Animal animal1 = new Animal("carmelo", "1", "camello", 8, ClasificacionComida.HERVIBOROS, LocalDate.now(), 6.3f, Medio.TIERRA, ClasificacionGestacion.OVIPAROS);
