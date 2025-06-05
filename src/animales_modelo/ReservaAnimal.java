@@ -74,4 +74,5 @@ public class ReservaAnimal {
 		System.out.println(a.getNombre() + " " + a.getFecha_nacimiento() + " " + a.getMedio() + " " + a.getComida());
 	}
 	
+	
 }

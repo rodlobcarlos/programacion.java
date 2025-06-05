@@ -57,8 +57,4 @@ public class PaginaWeb {
 			throw new HistorialException("Esta página tiene fecha futuro"); 
 		}
 	}
-	
-	void consultarHistorialCompleto() {
-		for()
-	}
 }

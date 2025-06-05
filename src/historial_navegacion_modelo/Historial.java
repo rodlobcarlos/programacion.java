@@ -24,7 +24,7 @@ public class Historial {
 	}
 	
 	// ITERAR SET HISTORIAL
-	void consultarHistorialCompleto() {
+	public void consultarHistorialCompleto() {
 		for(PaginaWeb pag : historial) {
 			System.out.println(pag);
 		}
@@ -49,7 +49,6 @@ public class Historial {
 		
 	}
 */ 
-
-	}
+	
 }
 
