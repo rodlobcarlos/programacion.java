@@ -1,4 +1,4 @@
-package animales_modelo;
+package ordenaciones;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class ReservaAnimal {
+
 	private String nombre;
 	private String lugar;
 	private double presupuesto_anual;
@@ -40,11 +41,12 @@ public class ReservaAnimal {
 		return "ReservaAnimal [nombre=" + nombre + ", lugar=" + lugar + ", presupuesto_anual=" + presupuesto_anual
 				+ ", animales=" + animales + "]";
 	}
-	public ReservaAnimal(String nombre, String lugar, double presupuesto_anual, List<Animal> animales) {
+	public ReservaAnimal(String nombre, String lugar, double presupuesto_anual) {
 		super();
 		this.nombre = nombre;
 		this.lugar = lugar;
 		this.presupuesto_anual = presupuesto_anual;
+		this.animales = new ArrayList<>();
 	}
 	
 	@Override
@@ -73,5 +75,4 @@ public class ReservaAnimal {
 	public void mostrarInformacion(Animal a){
 		System.out.println(a.getNombre() + " " + a.getFecha_nacimiento() + " " + a.getMedio() + " " + a.getComida());
 	}
-		
 }

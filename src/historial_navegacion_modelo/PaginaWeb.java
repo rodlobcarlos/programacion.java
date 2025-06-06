@@ -1,5 +1,6 @@
 package historial_navegacion_modelo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Scanner;
@@ -36,23 +37,25 @@ public class PaginaWeb {
 		return Objects.equals(fecha, other.fecha);
 	}
 	
-	public PaginaWeb(String url, LocalDateTime fecha) {
+	public PaginaWeb(String url, LocalDateTime localDateTime) {
 		super();
 		this.url = url;
-		this.fecha = fecha;
+		this.fecha = localDateTime;
 	}
+	
 	@Override
 	public String toString() {
 		return "PaginaWeb [url=" + url + ", fecha=" + fecha + "]";
 	}
 
-	void agragarPaginaHistorial() throws HistorialException{
+	public void agragarPaginaHistorial() throws HistorialException{
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Dame el nombre de la página web: ");
 		String nombre = scanner.next();
 		
 		if(this.fecha == null) {
 			this.fecha = LocalDateTime.now();
+			
 		}else if(this.fecha.equals(LocalDateTime.now().plusSeconds(1))) {
 			throw new HistorialException("Esta página tiene fecha futuro"); 
 		}

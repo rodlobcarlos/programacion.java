@@ -13,7 +13,7 @@ public class Historial {
 		this.historial = historial;
 	}
 
-	public Historial(TreeSet<PaginaWeb> historial) {
+	public Historial() {
 		super();
 		this.historial = historial;
 	}
