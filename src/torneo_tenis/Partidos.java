@@ -4,14 +4,16 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import simulacionTorneoTenis_modelo.Partido;
+
 public class Partidos {
 
 	private Jugador jugador1;
 	private Jugador jugador2;
 	private Estado estado;
 	private LocalDate fecha;
-	private List<Integer> puntuacion_set;
-	private List<Jugador> listaPartidos;
+	private List<Integer> puntuacionJugador1;
+	private List<Integer> puntuacionJugador2;
 	
 	public Jugador getJugador1() {
 		return jugador1;
@@ -37,57 +39,50 @@ public class Partidos {
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
-	public List<Integer> getPuntuacion_set() {
-		return puntuacion_set;
+	public List<Integer> getPuntuacionJugador1() {
+		return puntuacionJugador1;
 	}
-	public void setPuntuacion_set(List<Integer> puntuacion_set) {
-		this.puntuacion_set = puntuacion_set;
+	public void setPuntuacionJugador1(List<Integer> puntuacionJugador1) {
+		this.puntuacionJugador1 = puntuacionJugador1;
 	}
-	public List<Jugador> getListaPartidos() {
-		return listaPartidos;
+	public List<Integer> getPuntuacionJugador2() {
+		return puntuacionJugador2;
 	}
-	public void setListaPartidos(List<Jugador> listaPartidos) {
-		this.listaPartidos = listaPartidos;
+	public void setPuntuacionJugador2(List<Integer> puntuacionJugador2) {
+		this.puntuacionJugador2 = puntuacionJugador2;
 	}
 	
-	public Partidos(Jugador jugador1, Jugador jugador2, Estado estado, LocalDate fecha, List<Integer> puntuacion_set,
-			List<Partidos> listaPartidos) {
+	
+	public Partidos(Jugador jugador1, Jugador jugador2, Estado estado, LocalDate fecha) {
 		super();
 		this.jugador1 = jugador1;
 		this.jugador2 = jugador2;
 		this.estado = estado;
 		this.fecha = fecha;
-		this.puntuacion_set = puntuacion_set;
-		this.listaPartidos = new ArrayList<Jugador>();
-	}
-	
-	@Override
-	public String toString() {
-		return "Partidos [jugador1=" + jugador1 + ", jugador2=" + jugador2 + ", estado=" + estado + ", fecha=" + fecha
-				+ ", puntuacion_set=" + puntuacion_set + ", listaPartidos=" + listaPartidos + "]";
-	}
-	
-	public void registrarPartido(Jugador j1, Jugador j2) {
-		if(listaPartidos == null) {
-			listaPartidos.add(j1);
-			listaPartidos.add(j2);
-		}
-	}
-	
-	public List<Jugador> mostrarPartidos(Partidos p) throws TorneoException {
-		if(p.jugador1 == null || p.jugador2 == null) {
-			throw new TorneoException("Este jugador no está en el torneo.");
-		}
-		return listaPartidos;
+		this.puntuacionJugador1 = new ArrayList<>();
+        this.puntuacionJugador2 = new ArrayList<>();
 		
 	}
 	
-	public Jugador getJugadorGanador() throws TorneoException {
-		if(estado.equals(estado.PLANIFICADO)) {
+	
+	
+	
+	
+	
+	public void getJugadorGanador(Partidos p) throws TorneoException {
+		int mayor = 0;
+		if(p.getEstado().equals(estado.PLANIFICADO)) {
 			throw new TorneoException("El torneo está en estado planificado.");
 		} else {
-			// JUGADOR CON MAYOR PUNTUACION
+			if(p.getEstado().equals(estado.FINALIZADO)) {
+				for(Integer puntuacion : puntuacion_set) {
+					if(puntuacion > mayor) {
+						mayor = puntuacion;
+						System.out.println(mayor);
+					}
+				}
+			}
 		}
-		return jugador1;
 	}
+	
 }
