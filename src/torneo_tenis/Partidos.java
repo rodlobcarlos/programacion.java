@@ -43,10 +43,10 @@ public class Partidos {
 	public void setPuntuacion_set(List<Integer> puntuacion_set) {
 		this.puntuacion_set = puntuacion_set;
 	}
-	public List<Partidos> getListaPartidos() {
+	public List<Jugador> getListaPartidos() {
 		return listaPartidos;
 	}
-	public void setListaPartidos(List<Partidos> listaPartidos) {
+	public void setListaPartidos(List<Jugador> listaPartidos) {
 		this.listaPartidos = listaPartidos;
 	}
 	
@@ -82,6 +82,12 @@ public class Partidos {
 		
 	}
 	
-	// METODO PARA LA MEJOR PUNTUACION // 
-	
+	public Jugador getJugadorGanador() throws TorneoException {
+		if(estado.equals(estado.PLANIFICADO)) {
+			throw new TorneoException("El torneo está en estado planificado.");
+		} else {
+			// JUGADOR CON MAYOR PUNTUACION
+		}
+		return jugador1;
+	}
 }
