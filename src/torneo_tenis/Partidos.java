@@ -52,7 +52,6 @@ public class Partidos {
 		this.puntuacionJugador2 = puntuacionJugador2;
 	}
 	
-	
 	public Partidos(Jugador jugador1, Jugador jugador2, Estado estado, LocalDate fecha) {
 		super();
 		this.jugador1 = jugador1;
@@ -63,26 +62,15 @@ public class Partidos {
         this.puntuacionJugador2 = new ArrayList<>();
 		
 	}
-	
-	
-	
-	
-	
-	
-	public void getJugadorGanador(Partidos p) throws TorneoException {
-		int mayor = 0;
-		if(p.getEstado().equals(estado.PLANIFICADO)) {
-			throw new TorneoException("El torneo está en estado planificado.");
-		} else {
-			if(p.getEstado().equals(estado.FINALIZADO)) {
-				for(Integer puntuacion : puntuacion_set) {
-					if(puntuacion > mayor) {
-						mayor = puntuacion;
-						System.out.println(mayor);
-					}
-				}
-			}
-		}
+	public Partidos() {
+		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "Partidos [jugador1=" + jugador1 + ", jugador2=" + jugador2 + ", estado=" + estado + ", fecha=" + fecha
+				+ ", puntuacionJugador1=" + puntuacionJugador1 + ", puntuacionJugador2=" + puntuacionJugador2 + "]";
+	}
+	
+	
 	
 }

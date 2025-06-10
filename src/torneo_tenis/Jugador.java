@@ -79,30 +79,14 @@ public class Jugador {
 		this.nacionalidad = nacionalidad;
 		this.ranking = ranking;
 		this.num_partidos = num_partidos;
-		this.partidosJugados = new ArrayList<>();
+		this.partidosJugados = new ArrayList<>(num_partidos);
 	}
 
 	@Override
 	public String toString() {
 		return "Jugador [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", nacionalidad=" + nacionalidad
-				+ ", ranking=" + ranking + ", num_partidos=" + num_partidos + ", setjugador=" + setjugador + "]";
-	}
-
-	public void agregarPartido(Partidos partido) {
-		this.partidosJugados.add(partido);
-	}
-
-	public void registrarPartido(Partidos p) {
-		partidosJugados.add(p);
-		System.out.println("Partido: " + p + "añadido.");
-	}
-	
-	public List<Partidos> mostrarPartidos() throws TorneoException {
-		if(jugador1 == null || jugador2 == null) {
-			throw new TorneoException("Este jugador no está en el torneo.");
-		}
-		return partidosJugados;
-		
+				+ ", ranking=" + ranking + ", num_partidos=" + num_partidos + ", partidosJugados=" + partidosJugados
+				+ "]";
 	}
 
 }
