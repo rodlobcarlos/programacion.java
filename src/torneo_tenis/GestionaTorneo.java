@@ -21,11 +21,11 @@ public class GestionaTorneo {
 		Torneo t = new Torneo();
 		System.out.println(t.agregarJugador(j2));
 		System.out.println(t.agregarJugador(j1));
-//		System.out.println(t.agregarJugador(j2));
+//		System.out.println(t.agregarJugador(j2)); EXCEPTION
 
 		// REGISTRAR PARTIDO
 		System.out.println(t.registrarPartido(p));
-//		System.out.println(t.registrarPartido(p));
+//		System.out.println(t.registrarPartido(p)); EXCEPTION
 
 		//MUESTRA LISTA JUGADORES
 		System.out.println(t.muestraListaJugadores());

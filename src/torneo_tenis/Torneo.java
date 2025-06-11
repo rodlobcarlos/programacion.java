@@ -85,15 +85,15 @@ public class Torneo {
 	}
 	
 	public void mostrarPartidos(Jugador j) throws TorneoException {
-		Torneo t = null; //FALLO
-		Partidos p = new Partidos();
-		if(t.agregarJugador(j)) {
-			j.getNum_partidos();
+		if(!jugadores.contains(j)) {
+			throw new TorneoException("Este jugador no está en el torneo.");
+		}else {
+			System.out.println("Lista de partidos -> " + j.getNombre() + " " + j.getApellido() + " " + j.getNacionalidad() + " " +  j.getNum_partidos());
 		}
 	}
 	
 	public void getJugadorGanador() {
-		Iterator<Partidos> itr = partidos.iterator();
+		Iterator<Partidos> itr = partidos.iterator();	
 		while(itr.hasNext()) {
 			
 		}
