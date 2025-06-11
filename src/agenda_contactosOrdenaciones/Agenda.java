@@ -1,5 +1,6 @@
 package agenda_contactosOrdenaciones;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -48,8 +49,7 @@ public class Agenda {
 	// BUSCAR CONTACTO
 	public void buscarContacto(String nombre, String apellido) {
 		for(Contacto o : listaContacto) {
-			if(listaContacto.contains(nombre)
-					&& listaContacto.contains(apellido)) {
+			if(o.getNombre().equals(nombre) && o.getApellidos().equals(apellido)) {
 				System.out.println("Telefono e email -> " + o.getNumero_telefono() + " " + o.getEmail());
 			}
 		}

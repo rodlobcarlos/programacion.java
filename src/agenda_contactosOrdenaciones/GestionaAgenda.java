@@ -16,18 +16,22 @@ public class GestionaAgenda {
 				"Calle aguila", 634532415);
 		Contacto contacto3 = new Contacto("Manuel", "Martinez", "correoelectronic@outlook.com", 
 				"Calle Cervantes", 638685635);
+		Contacto contacto4 = new Contacto("Daniel", "Trujillo", "correoelectronic@outlook.com", 
+				"Calle barco", 631234325);
 		
 		// AGREGAR CONTACTO
 		agenda.agregarContacto(contacto3);
 		agenda.agregarContacto(contacto2);
 		agenda.agregarContacto(contacto1);
+		agenda.agregarContacto(contacto4);
+
 		System.out.println(agenda);
 		
 		// ELIMINAR CONTACTO
 		agenda.elimiarContacto(contacto2);
 		
 		// BUSCAR CONTACTO
-		
+		agenda.buscarContacto("Daniel", "Trujillo");
 		
 		// MOSTRAR CONTACTOS
 		System.out.println(agenda.mostrarContactos());
