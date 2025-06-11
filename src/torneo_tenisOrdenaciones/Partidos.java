@@ -1,4 +1,4 @@
-package torneo_tenis;
+package torneo_tenisOrdenaciones;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

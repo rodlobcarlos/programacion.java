@@ -1,4 +1,4 @@
-package torneo_tenis;
+package torneo_tenisOrdenaciones;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -88,14 +88,14 @@ public class Torneo {
 		if(!jugadores.contains(j)) {
 			throw new TorneoException("Este jugador no está en el torneo.");
 		}else {
-			System.out.println("Lista de partidos -> " + j.getNombre() + " " + j.getApellido() + " " + j.getNacionalidad() + " " +  j.getNum_partidos());
+			System.out.println("Lista de partidos -> " + j.getNombre() + " " + j.getApellido() + " " + j.getNacionalidad() + " |Número partidos: " +  j.getNum_partidos());
 		}
 	}
 	
 	public void getJugadorGanador() {
 		Iterator<Partidos> itr = partidos.iterator();	
 		while(itr.hasNext()) {
-			
+			// TERMINAR
 		}
 	}
 }

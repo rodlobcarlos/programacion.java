@@ -1,4 +1,4 @@
-package torneo_tenis;
+package torneo_tenisOrdenaciones;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -25,13 +25,14 @@ public class GestionaTorneo {
 
 		// REGISTRAR PARTIDO
 		System.out.println(t.registrarPartido(p));
-//		System.out.println(t.registrarPartido(p)); EXCEPTION
+//		System.out.println(t.registrarPartido(p)); REPETIDO
 
 		//MUESTRA LISTA JUGADORES
 		System.out.println(t.muestraListaJugadores());
 		
 		// MOSTRAR PARTIDOS
 		t.mostrarPartidos(j1);
+		
 	}
 }
  	
