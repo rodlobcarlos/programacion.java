@@ -6,9 +6,9 @@ public class Tarea implements Comparable<Tarea>{
 	private int id;
 	private String categoria;
 	private String descripcion;
-	private String prioridad;
+	private int prioridad;
 	
-	public Tarea(int id, String categoria, String descripcion, String prioridad) {
+	public Tarea(int id, String categoria, String descripcion, int prioridad) {
 		super();
 		this.id = contador+1;
 		this.categoria = categoria;
@@ -55,17 +55,17 @@ public class Tarea implements Comparable<Tarea>{
 		this.descripcion = descripcion;
 	}
 
-	public String getPrioridad() {
+	public int getPrioridad() {
 		return prioridad;
 	}
 
-	public void setPrioridad(String prioridad) {
+	public void setPrioridad(int prioridad) {
 		this.prioridad = prioridad;
 	}
 
 	@Override
 	public int compareTo(Tarea o) {
-		int comparaPrioridad = this.prioridad.compareTo(o.prioridad);
+		int prioridad;
 		if(comparaPrioridad != 0) {
 			return comparaPrioridad;
 		}

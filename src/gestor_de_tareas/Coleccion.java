@@ -47,6 +47,6 @@ public class Coleccion {
 	}
 	
 	public void mostrarPrioridadAlta() {
-		
+		// POR TERMINAR
 	}
 }
