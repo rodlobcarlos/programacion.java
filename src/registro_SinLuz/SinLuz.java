@@ -1,21 +1,21 @@
 package registro_SinLuz;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 
-public abstract class SinLuz implements Comparable<SinLuz>{
+public class SinLuz implements Comparable<SinLuz>{
 
 	private static int contador;
 	private int id;
 	private String nomrbe;
-	private List<SinLuz> listaSinLuz;
+	private Set<Encuentro> encuentros;
 	
-	public SinLuz(int id, String nomrbe, List<SinLuz> listaSinLuz) {
+	public SinLuz(String nomrbe) {
 		super();
 		this.id = id;
 		this.nomrbe = nomrbe;
-		this.listaSinLuz = new ArrayList<SinLuz>();
+		this.encuentros = new TreeSet<Encuentro>();
 	}
 
 	public static int getContador() {
@@ -42,19 +42,14 @@ public abstract class SinLuz implements Comparable<SinLuz>{
 		this.nomrbe = nomrbe;
 	}
 	
-	public List<SinLuz> getListaSinLuz() {
-		return listaSinLuz;
+	public Set<Encuentro> getListaSinLuz() {
+		return encuentros;
 	}
 
-	public void setListaSinLuz(List<SinLuz> listaSinLuz) {
-		this.listaSinLuz = listaSinLuz;
+	public void setListaSinLuz(Set<Encuentro> encuentros) {
+		this.encuentros = encuentros;
 	}
 	
-
-	@Override
-	public String toString() {
-		return "SinLuz [id=" + id + ", nomrbe=" + nomrbe + ", listaEncuentros=" + listaEncuentros + "]";
-	}
 
 	@Override
 	public int hashCode() {
@@ -74,18 +69,17 @@ public abstract class SinLuz implements Comparable<SinLuz>{
 	}
 
 	@Override
+	public String toString() {
+		return "SinLuz [id=" + id + ", nomrbe=" + nomrbe + ", encuentros=" + encuentros + "]";
+	}
+
+	@Override
 	public int compareTo(SinLuz o) {
-		int comparaPorNombre;
-		return comparaPorNombre = this.nomrbe.compareTo(o.nomrbe);
+		return this.nomrbe.compareTo(o.nomrbe);
+	}
+
+	public void agregarEncuentro(Encuentro e) {
+		encuentros.add(e);
 	}
 	
-	SinLuz s;
-	public void getSinLuz(int id) throws EldenException {
-		if(listaSinLuz.contains(id)) {
-			s.getId();
-		}else {
-			throw new EldenException("Este id no existe en el registro con"
-					+ "con el id -> " + s.getId());
-		}		
-	}
 }

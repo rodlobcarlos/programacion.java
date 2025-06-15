@@ -1,22 +1,19 @@
 package registro_SinLuz;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Encuentro extends SinLuz{
+public class Encuentro {
 
-	public Encuentro(int id, String nomrbe, List<SinLuz> listaEncuentros) {
-		super(id, nomrbe, listaEncuentros);
-		// TODO Auto-generated constructor stub
-	}
+	
 	private String nombre;
 	private LocalDate fecha_encuentro;
 	private int dificultad;
 	private List<String> enemigos;
-	
-	public Encuentro(int id, String nomrbe, List<SinLuz> listaEncuentros, String nombre, LocalDate fecha_encuentro,
-			int dificultad, List<String> enemigos) {
-		super(id, nomrbe, listaEncuentros);
+
+	public Encuentro(String nombre, LocalDate fecha_encuentro, int dificultad, List<String> enemigos) {
+		super();
 		this.nombre = nombre;
 		this.fecha_encuentro = fecha_encuentro;
 		this.dificultad = dificultad;
@@ -62,5 +59,4 @@ public class Encuentro extends SinLuz{
 	}
 	
 	
-	 
 }
