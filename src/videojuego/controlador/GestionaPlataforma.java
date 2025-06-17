@@ -67,20 +67,32 @@ public class GestionaPlataforma {
         
     	// AGREGAR JUEGO
         Juego juego1 = new Juego("Titulo1", "2025", GeneroJuego.AVENTURA, 4);
+        Juego juego2 = new Juego("Titulo2", "2023", GeneroJuego.ACCION, 10);
+        Juego juego3 = new Juego("Titulo2", "2023", GeneroJuego.ACCION, 10); // No se añade porque está repetido.
+
         EstudioDesarrollo estudio1 = new EstudioDesarrollo("Estudio1", "Desarrollador1", "Mexico");
+        EstudioDesarrollo estudio2 = new EstudioDesarrollo("Estudio2", "Desarrollador2", "España");
+
         plataforma.agregarJuego(juego1, estudio1);
+        plataforma.agregarJuego(juego2, estudio2);
+
         
         // ENCONTRAR JUEGO
         plataforma.buscarJuego("Titulo1", "2025");
+        plataforma.buscarJuego("Titulo2", "2023");
+
         
         //CAMBIAR ESTADO
         plataforma.cambiarEstado("Titulo1", "2025", EstadoJuego.EN_REVISION);
+        plataforma.cambiarEstado("Titulo2", "2023", EstadoJuego.RECHAZADO);
+
         
         // TOP3 POR DESCARGAS
 //        System.out.println(plataforma.top3PorDescargas());
         
+        
         // FILTRAR POR PAIS
         System.out.println(plataforma.filtrarPorPais("Mexico"));
-        
+        System.out.println(plataforma.filtrarPorPais("España"));
     }
 }
