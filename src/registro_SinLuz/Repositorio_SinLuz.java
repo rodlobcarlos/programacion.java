@@ -40,7 +40,7 @@ public class Repositorio_SinLuz {
 	
 	public void agregarEncuentro(Encuentro e, int id) throws EldenException {
 		SinLuz sinluz = getSinLuz(id); // Lanza la excepcion si no existe.
-		sinluz.agregarEncuentro(e);
+		sinluz.agregarEncuentro(e); // Agrega el encuentro.
 	}
 	
 	
